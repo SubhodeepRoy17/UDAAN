@@ -20,6 +20,7 @@ export default function Header() {
       id: "about",
       dropdown: [
         { name: "Themes", href: "#themes", id: "themes" },
+        { name: "About", href: "#about", id: "about" },
         { name: "Eligibility Criteria", href: "#eligibility", id: "eligibility" },
         { name: "Registration Guidelines", href: "#guidelines", id: "guidelines" }
       ]
