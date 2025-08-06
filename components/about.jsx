@@ -20,7 +20,6 @@ export default function Header() {
       id: "about",
       dropdown: [
         { name: "Themes", href: "#themes", id: "themes" },
-        { name: "About", href: "#about", id: "about" },
         { name: "Eligibility Criteria", href: "#eligibility", id: "eligibility" },
         { name: "Registration Guidelines", href: "#guidelines", id: "guidelines" }
       ]
@@ -28,6 +27,7 @@ export default function Header() {
     { name: "Register", href: "#registration", id: "registration" },
     { name: "Prizes", href: "#prizes", id: "prizes" },
     { name: "Schedule", href: "#schedule", id: "schedule" },
+    { name: "Committee", href: "#committee", id: "committee" },
     { name: "FAQ", href: "#faq", id: "faq" },
   ]
 
