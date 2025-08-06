@@ -31,12 +31,12 @@ export default function FAQ() {
         {
           question: "Who can participate in UDAAN?",
           answer:
-            "The competition is open to all undergraduate and postgraduate students. Teams can have 3-5 members including the team leader. Both HITK students and external participants are welcome.",
+            "The competition is open to all undergraduate and postgraduate students. Teams can have a maximum of 3 members including the team leader. Both HITK students and external participants are welcome.",
         },
         {
           question: "Is there any registration fee?",
           answer:
-            "Registration is completely free for HITK students. External participants (non-HITK students) need to pay ₹200 per team. Payment details will be shared after successful form submission.",
+            "Registration is completely free for HITK students. External participants (non-HITK students) need to pay ₹500 per team. Payment details will be shared after successful form submission and selection.",
         },
       ],
     },
@@ -46,12 +46,12 @@ export default function FAQ() {
         {
           question: "What should be the team composition?",
           answer:
-            "Each team must have 3-5 members including one team leader. The team leader will be the primary point of contact. Teams can have members from different colleges and disciplines.",
+            "Each team can have a maximum of 3 members including one team leader. The team leader will be the primary point of contact. Teams can have members from different colleges and disciplines.",
         },
         {
           question: "Can I participate individually?",
           answer:
-            "No, UDAAN is a team-based competition. You need to form a team of 3-5 members. If you don't have a team, you can attend our team formation support session on March 16, 2024.",
+            "Yes, you can participate individually, but we encourage forming teams for diverse perspectives and skills. Individual participants can register as a team of one.",
         },
         {
           question: "Can team members be from different colleges?",
@@ -61,92 +61,7 @@ export default function FAQ() {
         {
           question: "Can I change team members after registration?",
           answer:
-            "Minor changes in team composition are allowed until March 17, 2024. Major changes (more than 2 members) may require re-registration. Contact the organizing committee for assistance.",
-        },
-      ],
-    },
-    {
-      category: "Competition Process",
-      questions: [
-        {
-          question: "What are the competition phases?",
-          answer:
-            "The competition has 4 main phases: 1) Registration Phase (March 1-15), 2) Preparation Phase (March 16-20), 3) Evaluation Phase (March 21-25), and 4) Final Event (March 26). Each phase has specific deliverables and deadlines.",
-        },
-        {
-          question: "What do I need to submit?",
-          answer:
-            "You need to submit a detailed business plan (max 10 pages) and a presentation (max 15 slides) by March 20, 2024. The submission should include problem statement, solution, market analysis, business model, SDG alignment, and implementation plan.",
-        },
-        {
-          question: "How many teams will be shortlisted for finals?",
-          answer:
-            "Top 20 teams will be shortlisted for the final presentation round based on their submitted business plans. The shortlist will be announced on March 23, 2024.",
-        },
-        {
-          question: "What is the presentation format for finals?",
-          answer:
-            "Shortlisted teams will have 10 minutes to present their business idea followed by 5 minutes of Q&A with the jury panel. Presentations should be engaging and cover all key aspects of the business model.",
-        },
-      ],
-    },
-    {
-      category: "SDG & Ideas",
-      questions: [
-        {
-          question: "Do I need to align my idea with SDGs?",
-          answer:
-            "Yes, all business ideas must be aligned with at least one of the 17 UN Sustainable Development Goals. This alignment will be a key evaluation criterion and should be clearly demonstrated in your submission.",
-        },
-        {
-          question: "Can I work on multiple SDG themes?",
-          answer:
-            "While you can address multiple SDGs, you need to select one primary SDG theme during registration. Your business model can have secondary impacts on other SDGs, which can strengthen your submission.",
-        },
-        {
-          question: "Are there any restrictions on the type of business ideas?",
-          answer:
-            "Ideas should be innovative, feasible, and have positive social/environmental impact. We welcome ideas from all sectors - technology, healthcare, education, agriculture, environment, etc. Ideas should not involve harmful or illegal activities.",
-        },
-      ],
-    },
-    {
-      category: "Prizes & Benefits",
-      questions: [
-        {
-          question: "What are the prizes for winners?",
-          answer:
-            "Winner gets ₹25,000, Runner-up gets ₹15,000, and Second Runner-up gets ₹10,000. Additionally, there are special prizes for Best SDG Impact (₹5,000), Most Innovative Solution (₹5,000), and People's Choice Award (₹3,000).",
-        },
-        {
-          question: "What other benefits do participants get?",
-          answer:
-            "All participants get certificates, access to IIC-HITK incubation center, mentorship opportunities, networking with investors, startup resource kit, LinkedIn recommendations, and access to exclusive startup events.",
-        },
-        {
-          question: "Will there be mentorship support?",
-          answer:
-            "Yes, each registered team will be assigned an industry mentor on March 17, 2024. Mentors will provide guidance on business model development, market validation, and presentation preparation.",
-        },
-      ],
-    },
-    {
-      category: "Technical & Support",
-      questions: [
-        {
-          question: "What if I face technical issues during registration?",
-          answer:
-            "If you face any technical issues, please contact our support team at udaan@hitk.ac.in or call +91-XXXXX-XXXXX. We also have a dedicated help desk during registration period.",
-        },
-        {
-          question: "Where can I get updates about the competition?",
-          answer:
-            "Follow our official social media handles and check the IIC-HITK website regularly. Registered teams will receive email updates about important announcements and deadlines.",
-        },
-        {
-          question: "Is there any preparation material available?",
-          answer:
-            "Yes, we will share a comprehensive resource kit including business plan templates, presentation guidelines, SDG information, and startup resources after registration confirmation.",
+            "No, once registered, the team composition cannot be changed. Ensure all members are finalized before submitting the registration form.",
         },
       ],
     },
@@ -232,10 +147,10 @@ export default function FAQ() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50">
-                    Email: udaan@hitk.ac.in
+                    Email: rituparna.sinha@heritageit.edu
                   </Button>
                   <Button variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50">
-                    Call: +91-XXXXX-XXXXX
+                    Call: +91-91230-74188
                   </Button>
                 </div>
               </div>

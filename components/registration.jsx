@@ -89,8 +89,7 @@ export default function Registration() {
 
                   <div className="space-y-2">
                     <h4 className="font-semibold">Important Dates</h4>
-                    <p className="text-sm text-blue-100">Registration: Till March 15, 2025</p>
-                    <p className="text-sm text-blue-100">Submission: March 20, 2025</p>
+                    <p className="text-sm text-blue-100">Registration: 7th August 2025 - 17th August 2025</p>
                   </div>
                 </CardContent>
               </Card>
