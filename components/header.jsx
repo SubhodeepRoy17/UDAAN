@@ -27,6 +27,7 @@ export default function Header() {
     { name: "Register", href: "#registration", id: "registration" },
     { name: "Prizes", href: "#prizes", id: "prizes" },
     { name: "Schedule", href: "#schedule", id: "schedule" },
+    { name: "Committee", href: "#Committee", id: "Committee" },
     { name: "FAQ", href: "#faq", id: "faq" },
   ]
 
