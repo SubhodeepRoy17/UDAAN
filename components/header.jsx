@@ -27,19 +27,32 @@ export default function Header() {
     { name: "Register", href: "#registration", id: "registration" },
     { name: "Prizes", href: "#prizes", id: "prizes" },
     { name: "Schedule", href: "#schedule", id: "schedule" },
-    { name: "Committee", href: "#Committee", id: "Committee" },
+    { name: "Committee", href: "#committee", id: "committee" },
     { name: "FAQ", href: "#faq", id: "faq" },
   ]
 
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      const sections = navigationItems.flatMap(item => 
+        item.dropdown ? [item.id, ...item.dropdown.map(d => d.id)] : [item.id]
+      )
+      const scrollPosition = window.scrollY + 200 // Increased offset to account for both headers
+
+      // Find which section is currently in view
+      let currentSection = "hero"
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId)
+        if (section && section.offsetTop <= scrollPosition) {
+          currentSection = sectionId
+        }
+      }
+      setActiveSection(currentSection)
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [navigationItems]) 
 
   // Handle active section detection
   useEffect(() => {
@@ -67,13 +80,16 @@ export default function Header() {
     const targetElement = document.getElementById(targetId)
 
     if (targetElement) {
-      const headerHeight = 140 // Adjusted for combined header height
+      const headerHeight = 200 // Increased to account for both headers
       const targetPosition = targetElement.offsetTop - headerHeight
 
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth",
       })
+
+      // Immediately update active section
+      setActiveSection(targetId)
     }
 
     setIsMobileMenuOpen(false)
@@ -88,40 +104,44 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Heritage Institute Logo - Left */}
             <div className="flex items-center gap-4">
-              <div className="w-36 h-24 md:w-48 md:h-28 relative bg-white rounded-full shadow-sm border border-gray-200 p-1">
+              <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-full shadow-sm border border-gray-200 overflow-hidden">
                 <Image
                   src="/images/HIT_Logo_New-Picsart-AiImageEnhancer.jpg"
                   alt="Heritage Institute of Technology"
                   fill
-                  className="object-contain rounded"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 6rem, 7rem"
                 />
               </div>
               <div className="hidden sm:block">
-                <p className="text-sm font-semibold text-gray-800">Heritage Institute</p>
-                <p className="text-xs text-gray-600">of Technology</p>
+                <p className="text-lg font-semibold text-gray-1000">Heritage Institute</p>
+                <p className="text-lg font-semibold text-gray-1000">of Technology</p>
               </div>
             </div>
 
             {/* Center - Competition Title */}
-            <div className="text-center">
+            <div className="flex flex-col items-center justify-center">
               <h1 className="text-lg md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
                 UDAAN 2025
               </h1>
-              <p className="text-sm text-gray-600 hidden md:block">Business Model/Startup Competition</p>
+              <p className="text-sm text-gray-600 hidden md:block mt-1">
+                Business Model/Startup Competition
+              </p>
             </div>
 
             {/* IIC Logo - Right */}
             <div className="flex items-center gap-4">
               <div className="hidden sm:block text-right">
-                <p className="text-sm font-semibold text-gray-800">Institution's Innovation</p>
-                <p className="text-xs text-gray-600">Council</p>
+                <p className="text-lg font-semibold text-gray-800">Institution's Innovation</p>
+                <p className="text-lg font-semibold text-gray-800">Council</p>
               </div>
-              <div className="w-36 h-24 md:w-48 md:h-28 relative bg-white rounded-lg shadow-sm border border-gray-200 p-1">
+              <div className="w-36 h-24 md:w-48 md:h-28 relative">
                 <Image
                   src="/images/iiclogo-1.png"
                   alt="Institution's Innovation Council"
                   fill
-                  className="object-contain rounded"
+                  className="object-contain"
+                  sizes="(max-width: 768px) 9rem, 12rem"
                 />
               </div>
             </div>
@@ -175,15 +195,15 @@ export default function Header() {
                 >
                   <button
                     onClick={() => !item.dropdown && scrollToSection(item.href)}
-                    className={`px-3 py-2 rounded-full text-lg font-100px transition-all duration-300 hover:scale-105 flex items-center ${
-                      (activeSection === item.id || (item.dropdown && item.dropdown.some(d => activeSection === d.id))
+                    className={`px-3 py-2 rounded-full text-lg transition-all duration-300 hover:scale-105 flex items-center ${
+                      (activeSection === item.id || (item.dropdown && item.dropdown.some(d => activeSection === d.id)))
                         ? isScrolled
                           ? "bg-gradient-to-r from-blue-500 to-orange-500 text-white shadow-md"
                           : "bg-white/30 text-white backdrop-blur-sm"
                         : isScrolled
                           ? "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                           : "text-blue-100 hover:text-white hover:bg-white/20"
-              )}`}
+                    }`}
                   >
                     {item.name}
                     {item.dropdown && <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isAboutHovered ? 'rotate-180' : ''}`} />}
