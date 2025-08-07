@@ -10,15 +10,17 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isAboutHovered, setIsAboutHovered] = useState(false)
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false)
 
   const navigationItems = [
     { name: "Home", href: "#hero", id: "hero" },
-    { 
-      name: "About", 
-      href: "#about", 
+    {
+      name: "About",
+      href: "#about",
       id: "about",
       dropdown: [
+        { name: "About HITK", href: "#hitk", id: "hitk" },
         { name: "Themes", href: "#themes", id: "themes" },
         { name: "Eligibility Criteria", href: "#eligibility", id: "eligibility" },
         { name: "Registration Guidelines", href: "#guidelines", id: "guidelines" }
@@ -26,42 +28,24 @@ export default function Header() {
     },
     { name: "Register", href: "#registration", id: "registration" },
     { name: "Prizes", href: "#prizes", id: "prizes" },
-    { name: "Schedule", href: "#schedule", id: "schedule" },
+    { name: "Important dates", href: "#schedule", id: "schedule" },
     { name: "Committee", href: "#committee", id: "committee" },
     { name: "FAQ", href: "#faq", id: "faq" },
   ]
 
-  // Handle scroll effect
+  const resourcesItems = [
+    { name: "Event Brochure (PDF)", href: "/E-Poster-UDAAN.pdf", type: "pdf" },
+    { name: "SDG Guidelines (PDF)", href: "/SDG-Guidelines.pdf", type: "pdf" }
+  ]
+
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navigationItems.flatMap(item => 
+      setIsScrolled(window.scrollY > 10)
+      
+      const sections = navigationItems.flatMap(item =>
         item.dropdown ? [item.id, ...item.dropdown.map(d => d.id)] : [item.id]
       )
-      const scrollPosition = window.scrollY + 200 // Increased offset to account for both headers
-
-      // Find which section is currently in view
-      let currentSection = "hero"
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId)
-        if (section && section.offsetTop <= scrollPosition) {
-          currentSection = sectionId
-        }
-      }
-      setActiveSection(currentSection)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [navigationItems]) 
-
-  // Handle active section detection
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = navigationItems.flatMap(item => 
-        item.dropdown ? [item.id, ...item.dropdown.map(d => d.id)] : [item.id]
-      )
-      const scrollPosition = window.scrollY + 140 // Adjusted for new header height
-
+      const scrollPosition = window.scrollY + 140
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i])
         if (section && section.offsetTop <= scrollPosition) {
@@ -70,7 +54,7 @@ export default function Header() {
         }
       }
     }
-
+    
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -78,23 +62,37 @@ export default function Header() {
   const scrollToSection = (href) => {
     const targetId = href.replace("#", "")
     const targetElement = document.getElementById(targetId)
-
     if (targetElement) {
-      const headerHeight = 200 // Increased to account for both headers
+      const headerHeight = 200
       const targetPosition = targetElement.offsetTop - headerHeight
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      })
-
-      // Immediately update active section
+      window.scrollTo({ top: targetPosition, behavior: "smooth" })
       setActiveSection(targetId)
     }
-
     setIsMobileMenuOpen(false)
-    setIsAboutHovered(false)
+    setIsAboutOpen(false)
+    setIsResourcesOpen(false)
   }
+
+  const handleDownload = (href, filename) => {
+    const link = document.createElement('a')
+    link.href = href
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const isDropdownClick = event.target.closest('.dropdown-button, .dropdown-menu')
+      if (!isDropdownClick) {
+        setIsAboutOpen(false)
+        setIsResourcesOpen(false)
+      }
+    }
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [])
 
   return (
     <>
@@ -149,69 +147,48 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Header */}
-      <header
-        className={`fixed top-36 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-black/95 backdrop-blur-md shadow-lg border-b border-black-200/50"
-            : "bg-black/95 backdrop-blur-md shadow-lg border-b border-black-200/50"
-        }`}
-      >
+      {/* Main Navigation Header */}
+      <header className={`fixed top-36 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black/95 backdrop-blur-md shadow-lg"}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-18">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center shadow-lg ${
-                  isScrolled
-                    ? "bg-gradient-to-br from-orange-500 to-blue-500"
-                    : "bg-white/20 backdrop-blur-sm border border-white/20"
-                }`}
-              >
-                <Rocket className={`w-4 h-4 ${isScrolled ? "text-white" : "text-white"}`} />
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-blue-500 flex items-center justify-center shadow-lg">
+                <Rocket className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h1
-                  className={`text-xl font-bold ${
-                    isScrolled
-                      ? "bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent"
-                      : "text-white"
-                  }`}
-                >
-                  UDAAN
-                </h1>
-                <p className={`text-xs font-medium ${isScrolled ? "text-gray-600" : "text-blue-100"}`}>IIC-HITK</p>
+                <h1 className="text-xl font-bold text-white">UDAAN</h1>
+                <p className="text-xs font-medium text-blue-100">IIC-HITK</p>
               </div>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               {navigationItems.map((item) => (
-                <div 
-                  key={item.id}
-                  className="relative"
-                  onMouseEnter={() => item.dropdown && setIsAboutHovered(true)}
-                  onMouseLeave={() => item.dropdown && setIsAboutHovered(false)}
-                >
+                <div key={item.id} className="relative">
                   <button
-                    onClick={() => !item.dropdown && scrollToSection(item.href)}
-                    className={`px-3 py-2 rounded-full text-lg transition-all duration-300 hover:scale-105 flex items-center ${
+                    className={`dropdown-button px-3 py-2 rounded-full text-lg transition-all duration-300 hover:scale-105 flex items-center ${
                       (activeSection === item.id || (item.dropdown && item.dropdown.some(d => activeSection === d.id)))
-                        ? isScrolled
-                          ? "bg-gradient-to-r from-blue-500 to-orange-500 text-white shadow-md"
-                          : "bg-white/30 text-white backdrop-blur-sm"
-                        : isScrolled
-                          ? "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-                          : "text-blue-100 hover:text-white hover:bg-white/20"
+                        ? "bg-gradient-to-r from-blue-500 to-orange-500 text-white shadow-md"
+                        : "text-gray-300 hover:text-white"
                     }`}
+                    onClick={() => {
+                      if (item.dropdown) {
+                        setIsAboutOpen(!isAboutOpen)
+                        setIsResourcesOpen(false)
+                      } else {
+                        scrollToSection(item.href)
+                      }
+                    }}
                   >
                     {item.name}
-                    {item.dropdown && <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isAboutHovered ? 'rotate-180' : ''}`} />}
+                    {item.dropdown && (
+                      <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isAboutOpen ? 'rotate-180' : ''}`} />
+                    )}
                   </button>
 
-                  {/* Dropdown for About */}
-                  {item.dropdown && isAboutHovered && (
-                    <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
+                  {item.dropdown && isAboutOpen && (
+                    <div className="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
                       <div className="py-1">
                         {item.dropdown.map((dropdownItem) => (
                           <button
@@ -231,32 +208,45 @@ export default function Header() {
                   )}
                 </div>
               ))}
+
+              {/* Resources Dropdown */}
+              <div className="relative">
+                <button
+                  className={`dropdown-button px-3 py-2 rounded-full text-lg transition-all duration-300 hover:scale-105 flex items-center ${
+                    isResourcesOpen ? "bg-white/20 text-white" : "text-gray-300 hover:text-white"
+                  }`}
+                  onClick={() => {
+                    setIsResourcesOpen(!isResourcesOpen)
+                    setIsAboutOpen(false)
+                  }}
+                >
+                  Resources
+                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isResourcesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isResourcesOpen && (
+                  <div className="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
+                    <div className="py-1">
+                      {resourcesItems.map((resource) => (
+                        <button
+                          key={resource.name}
+                          onClick={() => handleDownload(resource.href, resource.name)}
+                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                        >
+                          {resource.name}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </nav>
 
-            {/* Desktop CTA Buttons */}
+            {/* Register Button */}
             <div className="hidden lg:flex items-center gap-2">
               <Button
                 onClick={() => scrollToSection("#registration")}
-                variant="outline"
                 size="sm"
-                className={`rounded-full font-semibold transition-all duration-300 hover:scale-105 text-xs px-3 py-1 ${
-                  isScrolled
-                    ? "border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white"
-                    : "border-white text-white hover:bg-white hover:text-blue-700 bg-transparent"
-                }`}
-              >
-                <Download className="w-3 h-3 mr-1" />
-                Brochure
-              </Button>
-
-              <Button
-                onClick={() => scrollToSection("#registration")}
-                size="sm"
-                className={`rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group text-xs px-3 py-1 ${
-                  isScrolled
-                    ? "bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white"
-                    : "bg-white text-blue-600 hover:bg-blue-50"
-                }`}
+                className="rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white"
               >
                 Register Now
                 <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -269,18 +259,13 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className={`lg:hidden p-2 ${
-                    isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-blue-200"
-                  }`}
+                  className="lg:hidden p-2 text-white hover:text-blue-200"
                 >
                   <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
 
-              <SheetContent
-                side="right"
-                className="w-80 bg-gradient-to-br from-blue-600 to-purple-600 text-white border-0"
-              >
+              <SheetContent side="right" className="w-80 bg-gradient-to-br from-blue-600 to-purple-600 text-white border-0">
                 <div className="flex items-center gap-3 mb-8 pt-4">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <Rocket className="w-6 h-6 text-white" />
@@ -296,19 +281,24 @@ export default function Header() {
                   {navigationItems.map((item) => (
                     <div key={item.id}>
                       <button
-                        onClick={() => !item.dropdown && scrollToSection(item.href)}
+                        onClick={() => {
+                          if (!item.dropdown) {
+                            scrollToSection(item.href)
+                          } else {
+                            setIsAboutOpen(!isAboutOpen)
+                          }
+                        }}
                         className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
-                          (activeSection === item.id || (item.dropdown && item.dropdown.some(d => activeSection === d.id)) 
+                          (activeSection === item.id || (item.dropdown && item.dropdown.some(d => activeSection === d.id))) 
                             ? "bg-white/20 text-white" 
                             : "text-blue-100"
-                  )}`}
+                        }`}
                       >
                         {item.name}
-                        {item.dropdown && <ChevronDown className={`w-4 h-4 transition-transform ${isAboutHovered ? 'rotate-180' : ''}`} />}
+                        {item.dropdown && <ChevronDown className={`w-4 h-4 transition-transform ${isAboutOpen ? 'rotate-180' : ''}`} />}
                       </button>
                       
-                      {/* Mobile dropdown items */}
-                      {item.dropdown && (
+                      {item.dropdown && isAboutOpen && (
                         <div className="ml-4 mt-1 space-y-1">
                           {item.dropdown.map((dropdownItem) => (
                             <button
@@ -327,27 +317,43 @@ export default function Header() {
                       )}
                     </div>
                   ))}
+
+                  {/* Mobile Resources Section */}
+                  <div>
+                    <button
+                      onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                      className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
+                        isResourcesOpen ? "bg-white/20 text-white" : "text-blue-100"
+                      }`}
+                    >
+                      Resources
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isResourcesOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {isResourcesOpen && (
+                      <div className="ml-4 mt-1 space-y-1">
+                        {resourcesItems.map((resource) => (
+                          <button
+                            key={resource.name}
+                            onClick={() => handleDownload(resource.href, resource.name)}
+                            className="w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 text-blue-100"
+                          >
+                            {resource.name}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </nav>
 
-                {/* Mobile CTA Buttons */}
-                <div className="space-y-3">
-                  <Button
-                    onClick={() => scrollToSection("#registration")}
-                    variant="outline"
-                    className="w-full border-white text-white hover:bg-white hover:text-blue-700 bg-transparent rounded-lg"
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    Download Brochure
-                  </Button>
-
-                  <Button
-                    onClick={() => scrollToSection("#registration")}
-                    className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white rounded-lg font-semibold shadow-lg"
-                  >
-                    Register Now
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </div>
+                {/* Mobile CTA Button */}
+                <Button
+                  onClick={() => scrollToSection("#registration")}
+                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white rounded-lg font-semibold shadow-lg"
+                >
+                  Register Now
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
 
                 {/* Competition Info */}
                 <div className="mt-8 p-4 bg-white/10 rounded-lg backdrop-blur-sm">

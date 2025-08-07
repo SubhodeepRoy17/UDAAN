@@ -152,15 +152,15 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                <Link href="mailto:udaan@hitk.ac.in" className="text-blue-200 hover:text-white transition-colors">
-                  udaan@hitk.ac.in
+                <Link href="mailto:rituparna.sinha@heritageit.edu" className="text-blue-200 hover:text-white transition-colors">
+                  rituparna.sinha@heritageit.edu
                 </Link>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                <Link href="tel:+91XXXXXXXXXX" className="text-blue-200 hover:text-white transition-colors">
-                  +91-XXXXX-XXXXX
+                <Link href="tel:+919123074188" className="text-blue-200 hover:text-white transition-colors">
+                  +91-91230-74188
                 </Link>
               </div>
             </div>
@@ -187,20 +187,7 @@ export default function Footer() {
             <p>© 2025 UDAAN - IIC Heritage Institute of Technology, Kolkata. All rights reserved.</p>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-sm">
-            <Link href="#" className="text-blue-200 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-blue-200 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="#" className="text-blue-200 hover:text-white transition-colors">
-              Competition Rules
-            </Link>
-            <Link href="#" className="text-blue-200 hover:text-white transition-colors">
-              Code of Conduct
-            </Link>
-          </div>
+          
         </div>
 
         {/* Powered by */}

@@ -76,7 +76,9 @@ export default function Guidelines() {
       points: [
         "Registration opens: August 7, 2025",
         "Registration closes: August 17, 2025",
-        "Final event: August 28, 2025"
+        "Final event: August 28, 2025",
+        "Venue: Heritage Institute of Technology, Kolkata",
+        "For any queries, contact: rituparna.sinha@heritageit.edu /+91-91230-74188"
       ]
     }
   ]

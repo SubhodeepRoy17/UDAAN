@@ -69,7 +69,7 @@ export default function Committee() {
       },
       {
         name: "Prof. Deep Malya Mukhopadhyay",
-        designation: "Asst. Professor, Dept. of Chemical Engineering, Heritage Institute of Technology"
+        designation: "Asst. Professor, Dept. of Information Technology, Heritage Institute of Technology"
       },
       {
         name: "Prof. Pramita Sen",
@@ -84,8 +84,8 @@ export default function Committee() {
         designation: "Asst. Professor, Dept. of Civil Engineering, Heritage Institute of Technology"
       },
       {
-        name: "Ms. Rajarshi Lodh",
-        designation: "Technical Assistant, Dept. of Civil Engineering, Heritage Institute of Technology"
+        name: "Ms. Rajashree Lodh",
+        designation: "Asst. Professor, Dept. of Civil Engineering, Heritage Institute of Technology"
       }
     ]
   }

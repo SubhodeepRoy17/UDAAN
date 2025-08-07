@@ -13,8 +13,6 @@ export default function Prizes() {
       bgColor: "from-yellow-50 to-orange-50",
       benefits: [
         "Cash Prize of ₹7,500",
-        "Incubation Support",
-        "Mentorship Program",
         "Industry Networking",
         "Winner Certificate",
       ],
@@ -28,10 +26,8 @@ export default function Prizes() {
       bgColor: "from-gray-50 to-blue-50",
       benefits: [
         "Cash Prize of ₹4,500",
-        "Mentorship Program",
         "Industry Networking",
         "Runner-up Certificate",
-        "Startup Resources",
       ],
     },
     {
@@ -43,17 +39,15 @@ export default function Prizes() {
       bgColor: "from-amber-50 to-yellow-50",
       benefits: [
         "Cash Prize of ₹3,000",
-        "Mentorship Session",
         "Networking Opportunity",
         "Certificate of Excellence",
-        "Resource Kit",
       ],
     },
   ]
 
   const recognitionPrizes = [
     {
-      title: "Best Innovation Award",
+      title: "Recognition Award",
       description: "For the most creative and unique business solution",
       amount: "₹2,000",
       icon: <Star className="w-6 h-6" />,
@@ -61,7 +55,7 @@ export default function Prizes() {
       bgColor: "bg-purple-50",
     },
     {
-      title: "Best SDG Impact Award",
+      title: "Recognition Award",
       description: "For the idea with highest potential social impact",
       amount: "₹2,000",
       icon: <Zap className="w-6 h-6" />,

@@ -6,98 +6,83 @@ export default function Schedule() {
   const scheduleData = [
     {
       phase: "Registration Timeline",
-      dateRange: "7th August to 17th August",
+      dateRange: "7th August to 15th August",
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
       events: [
         {
-          event: "Registration Opens",
+          event: "Submission Opens",
           date: "August 7, 2025",
           time: "9:00 AM",
           location: "Online Portal",
           description: "Team registration portal goes live"
         },
         {
-          event: "Registration Deadline",
+          event: "Submission Deadline",
           date: "August 17, 2025",
           time: "11:59 PM", 
           location: "Online Portal",
           description: "Last date for team registration"
+        },
+        {
+          event: "Submission Shortlisting Notification",
+          date: "August 23, 2025",
+          time: "To be notified via email", 
+          location: "Online Portal",
+          description: "Shortliosted teams will be notified via email"
+        },
+        {
+          event: "Final event",
+          date: "August 28, 2025",
+          time: "10:00 AM onwards", 
+          location: "To be notified via email",
+          description: "Selected teams will be notified via email"
         }
       ]
     },
-    {
-      phase: "Evaluation Phase", 
-      dateRange: "26th August to 30th August",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50",
-      events: [
-        {
-          event: "Initial Screening",
-          date: "August 26-28, 2025",
-          time: "All Day",
-          location: "Jury Panel Review",
-          description: "Expert jury reviews all submitted business plans"
-        },
-        {
-          event: "Shortlist Announcement",
-          date: "August 29, 2025",
-          time: "6:00 PM",
-          location: "Official Website",
-          description: "Top 30 teams selected for final presentation"
-        },
-        {
-          event: "Presentation Preparation",
-          date: "August 30, 2025",
-          time: "All Day",
-          location: "Team Locations",
-          description: "Shortlisted teams prepare final presentations"
-        }
-      ]
-    },
-    {
-      phase: "Final Event",
-      dateRange: "28th August, 2025",
-      color: "from-purple-500 to-purple-600", 
-      bgColor: "bg-purple-50",
-      events: [
-        {
-          event: "Registration & Setup",
-          date: "August 28, 2025",
-          time: "9:00 AM",
-          location: "Main Auditorium, HITK",
-          description: "Team check-in and presentation setup"
-        },
-        {
-          event: "Opening Ceremony",
-          date: "August 28, 2025",
-          time: "10:00 AM", 
-          location: "Main Auditorium, HITK",
-          description: "Welcome address and competition overview"
-        },
-        {
-          event: "Team Presentations",
-          date: "August 28, 2025",
-          time: "10:30 AM - 4:00 PM",
-          location: "Multiple Venues, HITK",
-          description: "10-minute presentations + 5-minute Q&A per team"
-        },
-        {
-          event: "Jury Deliberation",
-          date: "August 28, 2025", 
-          time: "4:00 PM - 5:00 PM",
-          location: "Private Room",
-          description: "Judges evaluate and select winners"
-        },
-        {
-          event: "Award Ceremony",
-          date: "August 28, 2025",
-          time: "5:30 PM - 6:30 PM",
-          location: "Main Auditorium, HITK", 
-          description: "Prize distribution and closing ceremony"
-        }
-      ]
-    }
+    // {
+    //   phase: "Final Event",
+    //   dateRange: "28th August, 2025",
+    //   color: "from-purple-500 to-purple-600", 
+    //   bgColor: "bg-purple-50",
+    //   events: [
+    //     {
+    //       event: "Registration & Setup",
+    //       date: "August 28, 2025",
+    //       time: "9:00 AM",
+    //       location: "Main Auditorium, HITK",
+    //       description: "Team check-in and presentation setup"
+    //     },
+    //     {
+    //       event: "Opening Ceremony",
+    //       date: "August 28, 2025",
+    //       time: "10:00 AM", 
+    //       location: "Main Auditorium, HITK",
+    //       description: "Welcome address and competition overview"
+    //     },
+    //     {
+    //       event: "Team Presentations",
+    //       date: "August 28, 2025",
+    //       time: "10:30 AM - 4:00 PM",
+    //       location: "Multiple Venues, HITK",
+    //       description: "10-minute presentations + 5-minute Q&A per team"
+    //     },
+    //     {
+    //       event: "Jury Deliberation",
+    //       date: "August 28, 2025", 
+    //       time: "4:00 PM - 5:00 PM",
+    //       location: "Private Room",
+    //       description: "Judges evaluate and select winners"
+    //     },
+    //     {
+    //       event: "Award Ceremony",
+    //       date: "August 28, 2025",
+    //       time: "5:30 PM - 6:30 PM",
+    //       location: "Main Auditorium, HITK", 
+    //       description: "Prize distribution and closing ceremony"
+    //     }
+    //   ]
+    // }
   ]
 
   return (

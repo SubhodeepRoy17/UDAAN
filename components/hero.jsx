@@ -3,27 +3,13 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Download, Rocket } from "lucide-react"
 
 export default function Hero() {
-  const scrollToSection = (href) => {
-    const targetId = href.replace("#", "")
-    const targetElement = document.getElementById(targetId)
-
-    if (targetElement) {
-      const headerHeight = 200 // Adjust this value based on your header height
-      const targetPosition = targetElement.offsetTop - headerHeight
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      })
-    }
-  }
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Only */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/background-bg.jpg" 
-          alt="Business background" 
+          alt="Heritage background" 
           className="w-full h-full object-cover"
         />
       </div>
@@ -57,7 +43,6 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
               <Button
-                onClick={() => scrollToSection("#registration")}
                 size="lg"
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
               >
@@ -66,7 +51,15 @@ export default function Hero() {
               </Button>
 
               <Button
-                onClick={() => scrollToSection("#registration")}
+                onClick={() => {
+                  // Create download link for the PDF
+                  const link = document.createElement('a')
+                  link.href = '/E-Poster-UDAAN.pdf' // Path to your PDF in public folder
+                  link.download = 'UDAAN-2025-Brochure.pdf' // Suggested filename for download
+                  document.body.appendChild(link)
+                  link.click()
+                  document.body.removeChild(link)
+                }}
                 variant="outline"
                 size="lg"
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group bg-transparent"
