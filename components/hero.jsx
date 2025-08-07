@@ -2,6 +2,20 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Download, Rocket } from "lucide-react"
 
 export default function Hero() {
+  const scrollToSection = (href) => {
+    const targetId = href.replace("#", "")
+    const targetElement = document.getElementById(targetId)
+
+    if (targetElement) {
+      const headerHeight = 200 // Adjust this value based on your header height
+      const targetPosition = targetElement.offsetTop - headerHeight
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      })
+    }
+  }
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Only */}
