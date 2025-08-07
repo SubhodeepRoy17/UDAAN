@@ -17,8 +17,8 @@ const poppins = Poppins({
 export const metadata = {
   title: "UDAAN - From Grounded Ideas to Sky High Impact | IIC-HITK",
   description:
-    "Join UDAAN, the ultimate startup & business model competition by IIC-HITK. Transform your innovative ideas into impactful solutions aligned with UN SDGs. Register now for exciting prizes and mentorship opportunities.",
-  keywords: "startup competition, business model, UN SDGs, innovation, entrepreneurship, HITK, IIC, UDAAN",
+    "Join UDAAN, the ultimate business model competition by IIC-HITK. Transform your innovative ideas into impactful solutions aligned with UN SDGs. Register now for exciting prizes and mentorship opportunities.",
+  keywords: "startup competition, business model, SDGs, innovation, entrepreneurship, HITK, IIC, UDAAN",
   authors: [{ name: "IIC-HITK" }],
   openGraph: {
     title: "UDAAN - From Grounded Ideas to Sky High Impact",
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "UDAAN - Startup Competition by IIC-HITK",
-    description: "Transform your innovative ideas into impactful solutions aligned with UN SDGs.",
+    description: "Transform your innovative ideas into impactful solutions aligned with SDGs.",
   },
 }
 
