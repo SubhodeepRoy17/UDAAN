@@ -141,49 +141,6 @@ export default function Registration() {
                       </div>
                     </div>
 
-                    {/* Embedded Google Form */}
-                    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-                      <div className="bg-gradient-to-r from-blue-600 to-orange-500 text-white p-4">
-                        <h4 className="font-semibold flex items-center gap-2">
-                          <FileText className="w-5 h-5" />
-                          UDAAN Registration Form
-                        </h4>
-                        <p className="text-blue-100 text-sm mt-1">Complete all required fields to register your team</p>
-                      </div>
-                      
-                      <div className="relative">
-                        {/* PASTE YOUR EMBEDDED GOOGLE FORM LINK HERE */}
-                        <iframe
-                          src="https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI"
-                          width="100%"
-                          height="800"
-                          frameBorder="0"
-                          marginHeight="0"
-                          marginWidth="0"
-                          className="w-full"
-                          title="UDAAN Registration Form"
-                        >
-                          Loading…
-                        </iframe>
-                        
-                        {/* Fallback for iframe loading issues */}
-                        <div className="absolute inset-0 flex items-center justify-center bg-gray-50 opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
-                          <div className="text-center p-8">
-                            <p className="text-gray-600 mb-4">Having trouble viewing the form?</p>
-                            {/* PASTE YOUR GOOGLE FORM LINK HERE TOO */}
-                            <a
-                              href="https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800 font-semibold underline pointer-events-auto"
-                            >
-                              Open form in new tab
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
                     {/* Additional Information */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
