@@ -63,8 +63,6 @@ export default function HITK() {
                 <div className="text-3xl font-bold text-blue-600 mb-1">24+</div>
                 <div className="text-sm text-gray-500">Years of Excellence</div>
               </div>
-            </div>
-            <div className="grid grid-cols-2 divide-x divide-gray-100 border-t border-gray-100">
               <div className="p-6 text-center">
                 <div className="text-3xl font-bold text-green-500 mb-1">A</div>
                 <div className="text-sm text-gray-500">NAAC Grade</div>
