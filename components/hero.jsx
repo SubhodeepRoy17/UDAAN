@@ -42,6 +42,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
               <Button
+                onClick={() => scrollToSection("#registration")}
                 size="lg"
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
               >
@@ -50,6 +51,7 @@ export default function Hero() {
               </Button>
 
               <Button
+                onClick={() => scrollToSection("#registration")}
                 variant="outline"
                 size="lg"
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group bg-transparent"
