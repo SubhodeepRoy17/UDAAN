@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
 
 export default function Committee() {
   const [activeTab, setActiveTab] = useState("chief-patron")
