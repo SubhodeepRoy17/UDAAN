@@ -31,12 +31,12 @@ export default function HITK() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="space-y-8">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Heritage Institute of Technology (HITK), established in 2001 under the aegis of the Kalyan Bharti Trust (KBT), is a premier autonomous institute in Kolkata dedicated to excellence in higher education. KBT, founded in 1990 by 22 visionary industrialists in Kolkata, aims to promote quality education in India, particularly in West Bengal. HITK is affiliated with Maulana Abul Kalam Azad University of Technology (MAKAUT) and offers 13 undergraduate and 7 postgraduate programs in various engineering disciplines. The institute is accredited by the National Assessment and Accreditation Council (NAAC) with a Grade ‘A’, and most of its eligible courses are accredited by the National Board of Accreditation (NBA-Tier 1). Recognized for its outstanding performance, HITK was one of 17 private institutions receiving additional grants under the TEQIP-II scheme.
+            <p className="text-lg text-gray-700 leading-relaxed text-justify text-center">
+                Heritage Institute of Technology (HITK), established in 2001 under the aegis of the Kalyan Bharti Trust (KBT), is a premier autonomous institute in Kolkata dedicated to excellence in higher education. KBT, founded in 1990 by 22 visionary industrialists in Kolkata, aims to promote quality education in India, particularly in West Bengal. HITK is affiliated with Maulana Abul Kalam Azad University of Technology (MAKAUT) and offers 13 undergraduate and 7 postgraduate programs in various engineering disciplines. The institute is accredited by the National Assessment and Accreditation Council (NAAC) with a Grade 'A', and most of its eligible courses are accredited by the National Board of Accreditation (NBA-Tier 1). Recognized for its outstanding performance, HITK was one of 17 private institutions receiving additional grants under the TEQIP-II scheme.
             </p>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
-              The institute emphasizes hands-on training, cutting-edge research, and state-of-the-art infrastructure, fostering innovation and excellence. HITK is home to initiatives like the IEEE EDS Centre of Excellence and the Centre for Advanced Biomedical Research, which drive interdisciplinary research. Collaborations with premier academic institutions and industries at both national and international levels further enhance its academic and research ecosystem. HITK’s alumni are a testament to its legacy, contributing significantly to top-tier companies and renowned universities worldwide, thereby upholding the institute's reputation. With a strong commitment to academic excellence, innovation, and industry integration, HITK continues to play a pivotal role in shaping the future of higher education in India.            
+            <p className="text-lg text-gray-700 leading-relaxed text-justify text-center">
+                The institute emphasizes hands-on training, cutting-edge research, and state-of-the-art infrastructure, fostering innovation and excellence. HITK is home to initiatives like the IEEE EDS Centre of Excellence and the Centre for Advanced Biomedical Research, which drive interdisciplinary research. Collaborations with premier academic institutions and industries at both national and international levels further enhance its academic and research ecosystem. HITK's alumni are a testament to its legacy, contributing significantly to top-tier companies and renowned universities worldwide, thereby upholding the institute's reputation. With a strong commitment to academic excellence, innovation, and industry integration, HITK continues to play a pivotal role in shaping the future of higher education in India.            
             </p>
             
           </div>
@@ -63,19 +63,11 @@ export default function HITK() {
                 <div className="text-3xl font-bold text-blue-600 mb-1">24+</div>
                 <div className="text-sm text-gray-500">Years of Excellence</div>
               </div>
-              <div className="p-6 text-center">
-                <div className="text-3xl font-bold text-orange-500 mb-1">20+</div>
-                <div className="text-sm text-gray-500">Academic Programs</div>
-              </div>
             </div>
             <div className="grid grid-cols-2 divide-x divide-gray-100 border-t border-gray-100">
               <div className="p-6 text-center">
                 <div className="text-3xl font-bold text-green-500 mb-1">A</div>
                 <div className="text-sm text-gray-500">NAAC Grade</div>
-              </div>
-              <div className="p-6 text-center">
-                <div className="text-3xl font-bold text-purple-500 mb-1">100+</div>
-                <div className="text-sm text-gray-500">Industry Collaborations</div>
               </div>
             </div>
           </div>
