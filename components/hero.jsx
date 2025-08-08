@@ -65,9 +65,9 @@ export default function Hero() {
           ])}
           {/* Duplicate for seamless looping */}
           {[
-            "IIC Presents UDAAN 2025",
+            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
-            "Registration deadline 17th August"
+            "Registration deadline is 17th August"
           ].flatMap((text, index, array) => [
             <div 
               key={`dup-${index}`}
