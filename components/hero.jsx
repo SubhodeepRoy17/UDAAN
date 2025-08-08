@@ -51,7 +51,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
         <div className="announcements-container flex items-center h-full whitespace-nowrap">
           {[
-            "IIC-HITK Presents UDAAN 2025",
+            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
             "Registration deadline is 17th August"
           ].flatMap((text, index, array) => [
