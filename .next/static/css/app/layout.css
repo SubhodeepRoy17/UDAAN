@@ -1114,6 +1114,9 @@
   .max-w-md {
     max-width: var(--container-md);
   }
+  .max-w-sm {
+    max-width: var(--container-sm);
+  }
   .min-w-\(--cell-size\) {
     min-width: var(--cell-size);
   }
