@@ -61,9 +61,7 @@ export default function Hero() {
             >
               {text}
             </div>,
-            index < array.length - 1 && (
-              <div key={`sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
-            )
+            <div key={`sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
           ])}
           {/* Duplicate for seamless looping */}
           {[
@@ -77,9 +75,7 @@ export default function Hero() {
             >
               {text}
             </div>,
-            index < array.length - 1 && (
-              <div key={`dup-sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
-            )
+            <div key={`dup-sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
           ])}
         </div>
       </div>

@@ -43,17 +43,24 @@ export default function Prizes() {
         "Certificate of Excellence",
       ],
     },
-  ]
-
-  const recognitionPrizes = [
     {
+      position: "4th Place",
       title: "Third Runner Up",
       description: "For the most creative and unique business solution",
-      amount: "₹2,000 (X 2 Teams)",
+      amount: "₹2,000 (2 Teams)",
       icon: <Star className="w-6 h-6" />,
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
+      benefits: [
+        "Cash Prize of ₹3,000",
+        "Networking Opportunity",
+        "Certificate of Excellence",
+      ],
     }
+  ]
+
+  const recognitionPrizes = [
+    
   ]
 
   const additionalBenefits = [
@@ -131,42 +138,6 @@ export default function Prizes() {
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* Recognition Prizes */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Special Recognition Awards</h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Additional opportunities to win special prizes and recognition for outstanding achievements
-            </p>
-   
-
-          <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50"> {/* Full-screen centered container with light bg */}
-            <div className="w-full max-w-sm"> {/* Controls card width (adjust max-w-sm as needed) */}
-              <Card
-                className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 ${recognitionPrizes[0].bgColor}`}
-              >
-                <CardContent className="p-8 text-center">
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-br ${recognitionPrizes[0].color} rounded-full flex items-center justify-center mx-auto mb-6 text-white shadow-lg`}
-                  >
-                    {recognitionPrizes[0].icon}
-                  </div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-3">{recognitionPrizes[0].title}</h4>
-                  <p className="text-gray-600 mb-4">{recognitionPrizes[0].description}</p>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                    {recognitionPrizes[0].amount}
-                  </div>
-                  <Badge className={`bg-gradient-to-r ${recognitionPrizes[0].color} text-white border-0 px-4 py-2`}>
-                    Special Recognition
-                  </Badge>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-          </div>
-
         </div>
 
         {/* Additional Benefits */}
