@@ -51,18 +51,18 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
         <div className="announcements-container flex items-center h-full whitespace-nowrap">
           {[
-            "IIC Presents UDAAN 2025",
+            "IIC-HITK Presents UDAAN 2025",
             "30 teams will be shortlisted for the finals",
-            "Registration deadline 17th August"
+            "Registration deadline is 17th August"
           ].flatMap((text, index, array) => [
             <div 
               key={index}
-              className="announcement-item mx-4 text-white font-medium text-lg flex-shrink-0"
+              className="announcement-item mx-8 text-white font-medium text-lg flex-shrink-0"
             >
               {text}
             </div>,
             index < array.length - 1 && (
-              <div key={`sep-${index}`} className="text-white/50 text-lg flex-shrink-0">|</div>
+              <div key={`sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
             )
           ])}
           {/* Duplicate for seamless looping */}
@@ -73,12 +73,12 @@ export default function Hero() {
           ].flatMap((text, index, array) => [
             <div 
               key={`dup-${index}`}
-              className="announcement-item mx-4 text-white font-medium text-lg flex-shrink-0"
+              className="announcement-item mx-8 text-white font-medium text-lg flex-shrink-0"
             >
               {text}
             </div>,
             index < array.length - 1 && (
-              <div key={`dup-sep-${index}`} className="text-white/50 text-lg flex-shrink-0">|</div>
+              <div key={`dup-sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
             )
           ])}
         </div>
