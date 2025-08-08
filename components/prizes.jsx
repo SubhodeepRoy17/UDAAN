@@ -52,7 +52,7 @@ export default function Prizes() {
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
       benefits: [
-        "Cash Prize of ₹3,000",
+        "Cash Prize of ₹2,000",
         "Networking Opportunity",
         "Certificate of Excellence",
       ],
