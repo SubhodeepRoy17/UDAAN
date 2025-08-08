@@ -51,7 +51,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
         <div className="announcements-container flex items-center h-full whitespace-nowrap">
           {[
-            "IIC Presents UDAAN 2025",
+            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
               <span className="mr-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
@@ -62,7 +62,7 @@ export default function Hero() {
                 }}></span>
                 <span className="relative z-10">NEW</span>
               </span>
-              Registration deadline 17th August
+              Registration deadline is 17th August
             </span>
           ].flatMap((text, index, array) => [
             <div 
@@ -75,7 +75,7 @@ export default function Hero() {
           ])}
           {/* Duplicate for seamless looping */}
           {[
-            "IIC Presents UDAAN 2025",
+            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
               <span className="mr-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
@@ -86,7 +86,7 @@ export default function Hero() {
                 }}></span>
                 <span className="relative z-10">NEW</span>
               </span>
-              Registration deadline 17th August
+              Registration deadline is 17th August
             </span>
           ].flatMap((text, index, array) => [
             <div 
