@@ -1,6 +1,7 @@
 'use client'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Download, Rocket } from "lucide-react"
+import { useEffect, useRef } from "react"
 
 export default function Hero() {
   const scrollToSection = (href) => {
@@ -16,8 +17,73 @@ export default function Hero() {
     setIsAboutOpen(false)
     setIsResourcesOpen(false)
   }
+
+  // Animation for the sliding announcements
+  useEffect(() => {
+    const announcements = document.querySelectorAll('.announcement-item')
+    if (announcements.length === 0) return
+
+    const container = document.querySelector('.announcements-container')
+    const containerWidth = container.offsetWidth
+    const itemWidth = announcements[0].offsetWidth
+    const totalWidth = itemWidth * announcements.length
+    let position = containerWidth
+
+    const animate = () => {
+      position -= 1
+      if (position < -totalWidth) {
+        position = containerWidth
+      }
+      container.style.transform = `translateX(${position}px)`
+      requestAnimationFrame(animate)
+    }
+
+    const animationId = requestAnimationFrame(animate)
+
+    return () => {
+      cancelAnimationFrame(animationId)
+    }
+  }, [])
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Announcement Bar */}
+      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
+        <div className="announcements-container flex items-center h-full whitespace-nowrap">
+          {[
+            "IIC Presents UDAAN 2025",
+            "30 teams will be shortlisted for the finals",
+            "Registration deadline 17th August"
+          ].flatMap((text, index, array) => [
+            <div 
+              key={index}
+              className="announcement-item mx-4 text-white font-medium text-lg flex-shrink-0"
+            >
+              {text}
+            </div>,
+            index < array.length - 1 && (
+              <div key={`sep-${index}`} className="text-white/50 text-lg flex-shrink-0">|</div>
+            )
+          ])}
+          {/* Duplicate for seamless looping */}
+          {[
+            "IIC Presents UDAAN 2025",
+            "30 teams will be shortlisted for the finals",
+            "Registration deadline 17th August"
+          ].flatMap((text, index, array) => [
+            <div 
+              key={`dup-${index}`}
+              className="announcement-item mx-4 text-white font-medium text-lg flex-shrink-0"
+            >
+              {text}
+            </div>,
+            index < array.length - 1 && (
+              <div key={`dup-sep-${index}`} className="text-white/50 text-lg flex-shrink-0">|</div>
+            )
+          ])}
+        </div>
+      </div>
+
       {/* Background Image Only */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -28,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Text Content Container with Semi-Transparent Backdrop */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full mt-12"> {/* Added mt-12 to account for announcement bar */}
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-black/30 backdrop-blur-sm rounded-xl p-8 md:p-12 border border-white/10">
             {/* Event Badge */}
