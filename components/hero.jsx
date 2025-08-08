@@ -54,9 +54,9 @@ export default function Hero() {
             "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
-              <span className="mr-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
+              <span className="mr-2 px-1.5 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 opacity-75 animate-slideHighlight" style={{
-                  animation: 'slideHighlight 2s linear infinite',
+                  animation: 'slideHighlight 1s linear infinite',
                   width: '150%',
                   left: '-50%'
                 }}></span>
@@ -67,20 +67,20 @@ export default function Hero() {
           ].flatMap((text, index, array) => [
             <div 
               key={index}
-              className="announcement-item mx-8 text-white font-medium text-lg flex-shrink-0"
+              className="announcement-item mx-4 text-white font-medium text-lg flex-shrink-0"
             >
               {text}
             </div>,
-            <div key={`sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
+            <div key={`sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-2">|</div>
           ])}
           {/* Duplicate for seamless looping */}
           {[
             "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
-              <span className="mr-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
+              <span className="mr-2 px-1.5 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 opacity-75 animate-slideHighlight" style={{
-                  animation: 'slideHighlight 2s linear infinite',
+                  animation: 'slideHighlight 1s linear infinite',
                   width: '150%',
                   left: '-50%'
                 }}></span>
@@ -91,11 +91,11 @@ export default function Hero() {
           ].flatMap((text, index, array) => [
             <div 
               key={`dup-${index}`}
-              className="announcement-item mx-8 text-white font-medium text-lg flex-shrink-0"
+              className="announcement-item mx-4 text-white font-medium text-lg flex-shrink-0"
             >
               {text}
             </div>,
-            <div key={`dup-sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-4">|</div>
+            <div key={`dup-sep-${index}`} className="text-white/50 text-lg flex-shrink-0 mx-2">|</div>
           ])}
         </div>
       </div>
