@@ -12,10 +12,6 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
-  const [mobileDropdowns, setMobileDropdowns] = useState({
-    about: false,
-    resources: false
-  })
 
   const navigationItems = [
     { name: "Home", href: "#hero", id: "hero" },
@@ -49,8 +45,7 @@ export default function Header() {
       const sections = navigationItems.flatMap(item =>
         item.dropdown ? [item.id, ...item.dropdown.map(d => d.id)] : [item.id]
       )
-      const headerHeight = window.innerWidth < 1024 ? 160 : 140
-      const scrollPosition = window.scrollY + headerHeight
+      const scrollPosition = window.scrollY + 140
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i])
         if (section && section.offsetTop <= scrollPosition) {
@@ -64,18 +59,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const toggleMobileDropdown = (dropdownName) => {
-    setMobileDropdowns(prev => ({
-      ...prev,
-      [dropdownName]: !prev[dropdownName]
-    }))
-  }
-
   const scrollToSection = (href) => {
     const targetId = href.replace("#", "")
     const targetElement = document.getElementById(targetId)
     if (targetElement) {
-      const headerHeight = window.innerWidth < 1024 ? 160 : 200
+      const headerHeight = 200
       const targetPosition = targetElement.offsetTop - headerHeight
       window.scrollTo({ top: targetPosition, behavior: "smooth" })
       setActiveSection(targetId)
@@ -83,7 +71,6 @@ export default function Header() {
     setIsMobileMenuOpen(false)
     setIsAboutOpen(false)
     setIsResourcesOpen(false)
-    setMobileDropdowns({ about: false, resources: false })
   }
 
   const handleDownload = (href, filename) => {
@@ -161,7 +148,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation Header */}
-      <header className={`fixed top-[7.5rem] left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black/95 backdrop-blur-md shadow-lg"}`}>
+      <header className={`fixed top-36 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black/95 backdrop-blur-md shadow-lg"}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-18">
             {/* Logo */}
@@ -298,7 +285,7 @@ export default function Header() {
                           if (!item.dropdown) {
                             scrollToSection(item.href)
                           } else {
-                            toggleMobileDropdown('about')
+                            setIsAboutOpen(!isAboutOpen)
                           }
                         }}
                         className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
@@ -308,18 +295,15 @@ export default function Header() {
                         }`}
                       >
                         {item.name}
-                        {item.dropdown && <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdowns.about ? 'rotate-180' : ''}`} />}
+                        {item.dropdown && <ChevronDown className={`w-4 h-4 transition-transform ${isAboutOpen ? 'rotate-180' : ''}`} />}
                       </button>
                       
-                      {item.dropdown && mobileDropdowns.about && (
+                      {item.dropdown && isAboutOpen && (
                         <div className="ml-4 mt-1 space-y-1">
                           {item.dropdown.map((dropdownItem) => (
                             <button
                               key={dropdownItem.id}
-                              onClick={() => {
-                                scrollToSection(dropdownItem.href)
-                                setIsMobileMenuOpen(false)
-                              }}
+                              onClick={() => scrollToSection(dropdownItem.href)}
                               className={`w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 ${
                                 activeSection === dropdownItem.id 
                                   ? "bg-white/20 text-white" 
@@ -337,24 +321,21 @@ export default function Header() {
                   {/* Mobile Resources Section */}
                   <div>
                     <button
-                      onClick={() => toggleMobileDropdown('resources')}
+                      onClick={() => setIsResourcesOpen(!isResourcesOpen)}
                       className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
-                        mobileDropdowns.resources ? "bg-white/20 text-white" : "text-blue-100"
+                        isResourcesOpen ? "bg-white/20 text-white" : "text-blue-100"
                       }`}
                     >
                       Resources
-                      <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdowns.resources ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isResourcesOpen ? 'rotate-180' : ''}`} />
                     </button>
                     
-                    {mobileDropdowns.resources && (
+                    {isResourcesOpen && (
                       <div className="ml-4 mt-1 space-y-1">
                         {resourcesItems.map((resource) => (
                           <button
                             key={resource.name}
-                            onClick={() => {
-                              handleDownload(resource.href, resource.name)
-                              setIsMobileMenuOpen(false)
-                            }}
+                            onClick={() => handleDownload(resource.href, resource.name)}
                             className="w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 text-blue-100"
                           >
                             {resource.name}
@@ -367,10 +348,7 @@ export default function Header() {
 
                 {/* Mobile CTA Button */}
                 <Button
-                  onClick={() => {
-                    scrollToSection("#registration")
-                    setIsMobileMenuOpen(false)
-                  }}
+                  onClick={() => scrollToSection("#registration")}
                   className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white rounded-lg font-semibold shadow-lg"
                 >
                   Register Now
@@ -383,15 +361,15 @@ export default function Header() {
                   <div className="space-y-2 text-sm text-blue-100">
                     <div className="flex justify-between">
                       <span>Registration:</span>
-                      <span className="text-white">Till August 17</span>
+                      <span className="text-white">Till March 15</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Prize Pool:</span>
-                      <span className="text-white">₹17,000+</span>
+                      <span className="text-white">₹63,000+</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Final Event:</span>
-                      <span className="text-white">August 28</span>
+                      <span className="text-white">March 26</span>
                     </div>
                   </div>
                 </div>
@@ -402,7 +380,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind fixed headers */}
-      <div className="h-[9rem] lg:h-56" />
+      <div className="h-56" />
     </>
   )
 }
