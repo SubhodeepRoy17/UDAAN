@@ -54,8 +54,7 @@ export default function Hero() {
             "IIC Presents UDAAN 2025",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
-              Registration deadline 17th August
-              <span className="ml-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
+              <span className="mr-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 opacity-75 animate-slideHighlight" style={{
                   animation: 'slideHighlight 2s linear infinite',
                   width: '150%',
@@ -63,6 +62,7 @@ export default function Hero() {
                 }}></span>
                 <span className="relative z-10">NEW</span>
               </span>
+              Registration deadline 17th August
             </span>
           ].flatMap((text, index, array) => [
             <div 
@@ -78,8 +78,7 @@ export default function Hero() {
             "IIC Presents UDAAN 2025",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
-              Registration deadline 17th August
-              <span className="ml-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
+              <span className="mr-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 opacity-75 animate-slideHighlight" style={{
                   animation: 'slideHighlight 2s linear infinite',
                   width: '150%',
@@ -87,6 +86,7 @@ export default function Hero() {
                 }}></span>
                 <span className="relative z-10">NEW</span>
               </span>
+              Registration deadline 17th August
             </span>
           ].flatMap((text, index, array) => [
             <div 
