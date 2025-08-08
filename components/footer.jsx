@@ -42,27 +42,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
-      {/* Newsletter Section */}
-      <div className="border-b border-white/10">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold mb-4">Stay Updated with UDAAN</h3>
-            <p className="text-blue-200 text-lg mb-8 max-w-2xl mx-auto">
-              Get the latest updates about competition announcements, deadlines, and startup opportunities
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                className="bg-white/10 border-white/20 text-white placeholder:text-blue-200 focus:border-orange-400"
-              />
-              <Button className="bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 px-8">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
