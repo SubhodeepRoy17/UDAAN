@@ -47,21 +47,13 @@ export default function Prizes() {
 
   const recognitionPrizes = [
     {
-      title: "Recognition Award",
+      title: "Third Runner Up",
       description: "For the most creative and unique business solution",
-      amount: "₹2,000",
+      amount: "₹2,000 (X 2 Teams)",
       icon: <Star className="w-6 h-6" />,
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
-    },
-    {
-      title: "Recognition Award",
-      description: "For the idea with highest potential social impact",
-      amount: "₹2,000",
-      icon: <Zap className="w-6 h-6" />,
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50",
-    },
+    }
   ]
 
   const additionalBenefits = [
