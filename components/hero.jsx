@@ -3,6 +3,19 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Download, Rocket } from "lucide-react"
 
 export default function Hero() {
+  const scrollToSection = (href) => {
+    const targetId = href.replace("#", "")
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      const headerHeight = 200
+      const targetPosition = targetElement.offsetTop - headerHeight
+      window.scrollTo({ top: targetPosition, behavior: "smooth" })
+      setActiveSection(targetId)
+    }
+    setIsMobileMenuOpen(false)
+    setIsAboutOpen(false)
+    setIsResourcesOpen(false)
+  }
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Only */}
@@ -43,6 +56,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
               <Button
+                onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
                 size="lg"
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
               >

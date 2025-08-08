@@ -244,7 +244,7 @@ export default function Header() {
             {/* Register Button */}
             <div className="hidden lg:flex items-center gap-2">
               <Button
-                onClick={() => scrollToSection("#registration")}
+                onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
                 size="sm"
                 className="rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white"
               >
