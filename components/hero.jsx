@@ -51,9 +51,19 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
         <div className="announcements-container flex items-center h-full whitespace-nowrap">
           {[
-            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
+            "IIC Presents UDAAN 2025",
             "30 teams will be shortlisted for the finals",
-            "Registration deadline is 17th August"
+            <span className="relative inline-flex items-center">
+              Registration deadline 17th August
+              <span className="ml-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
+                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 opacity-75 animate-slideHighlight" style={{
+                  animation: 'slideHighlight 2s linear infinite',
+                  width: '150%',
+                  left: '-50%'
+                }}></span>
+                <span className="relative z-10">NEW</span>
+              </span>
+            </span>
           ].flatMap((text, index, array) => [
             <div 
               key={index}
@@ -65,9 +75,19 @@ export default function Hero() {
           ])}
           {/* Duplicate for seamless looping */}
           {[
-            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
+            "IIC Presents UDAAN 2025",
             "30 teams will be shortlisted for the finals",
-            "Registration deadline is 17th August"
+            <span className="relative inline-flex items-center">
+              Registration deadline 17th August
+              <span className="ml-2 px-2 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
+                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 opacity-75 animate-slideHighlight" style={{
+                  animation: 'slideHighlight 2s linear infinite',
+                  width: '150%',
+                  left: '-50%'
+                }}></span>
+                <span className="relative z-10">NEW</span>
+              </span>
+            </span>
           ].flatMap((text, index, array) => [
             <div 
               key={`dup-${index}`}
