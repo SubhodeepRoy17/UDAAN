@@ -284,9 +284,9 @@ export default function Header() {
                         onClick={() => {
                           if (!item.dropdown) {
                             scrollToSection(item.href)
-                          } else {
-                            // Toggle only the current dropdown
-                            setIsAboutOpen(prev => item.id === "about" ? !prev : false)
+                          } else if (item.id === "about") {
+                            setIsAboutOpen(!isAboutOpen)
+                            setIsResourcesOpen(false) // Close resources if open
                           }
                         }}
                         className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
@@ -303,7 +303,7 @@ export default function Header() {
                         )}
                       </button>
                       
-                      {item.dropdown && item.id === "about" && isAboutOpen && (
+                      {item.id === "about" && isAboutOpen && (
                         <div className="ml-4 mt-1 space-y-1">
                           {item.dropdown.map((dropdownItem) => (
                             <button
@@ -326,7 +326,10 @@ export default function Header() {
                   {/* Mobile Resources Section */}
                   <div>
                     <button
-                      onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                      onClick={() => {
+                        setIsResourcesOpen(!isResourcesOpen)
+                        setIsAboutOpen(false) // Close about if open
+                      }}
                       className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
                         isResourcesOpen ? "bg-white/20 text-white" : "text-blue-100"
                       }`}
