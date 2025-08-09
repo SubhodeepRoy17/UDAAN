@@ -174,8 +174,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation Header */}
-      <header className={`fixed top-36 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black/95 backdrop-blur-md shadow-lg"}`}>
-        <div className="container mx-auto px-4">
+      <header className={`fixed top-[72px] md:top-36 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black/95 backdrop-blur-md shadow-lg"}`}>        <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-18">
             {/* Logo */}
             <div className="flex items-center gap-3">
