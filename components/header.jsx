@@ -97,54 +97,78 @@ export default function Header() {
   return (
     <>
       {/* Institutional Logos Bar */}
-      <div className="fixed top-0 left-0 right-0 z-60 bg-white/95 backdrop-blur-md border-b border-gray-200/50 py-2 sm:py-3">
-        <div className="container mx-auto px-2 sm:px-4">
-          <div className="flex items-center justify-between gap-1 sm:gap-2">
+      <div className="fixed top-0 left-0 right-0 z-60 bg-white/95 backdrop-blur-md border-b border-gray-200/50 py-2 md:py-4">
+        <div className="container mx-auto px-2 md:px-4">
+          {/* Mobile View (shows only logos) */}
+          <div className="md:hidden flex items-center justify-between">
+            <div className="w-16 h-16 relative rounded-full border border-gray-200 overflow-hidden">
+              <Image
+                src="/images/HIT_Logo_New-Picsart-AiImageEnhancer.jpg"
+                alt="Heritage Institute of Technology"
+                fill
+                className="object-cover"
+              />
+            </div>
             
-            {/* Heritage Institute - Left */}
-            <div className="flex items-center gap-1 sm:gap-2 min-w-0">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex-shrink-0 relative rounded-full border border-gray-200 overflow-hidden">
+            <h1 className="text-xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+              UDAAN 2025
+            </h1>
+            
+            <div className="w-20 h-14 relative">
+              <Image
+                src="/images/iiclogo-1.png"
+                alt="Institution's Innovation Council"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Desktop View (original layout) */}
+          <div className="hidden md:flex items-center justify-between">
+            {/* Heritage Institute Logo - Left */}
+            <div className="flex items-center gap-4">
+              <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-full shadow-sm border border-gray-200 overflow-hidden">
                 <Image
                   src="/images/HIT_Logo_New-Picsart-AiImageEnhancer.jpg"
                   alt="Heritage Institute of Technology"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 3rem, (max-width: 768px) 3.5rem, 4rem"
+                  sizes="(max-width: 768px) 6rem, 7rem"
                 />
               </div>
-              <div className="min-w-0">
-                <p className="text-[11px] xs:text-xs sm:text-sm md:text-base font-medium text-gray-900 leading-tight truncate">Heritage</p>
-                <p className="text-[11px] xs:text-xs sm:text-sm md:text-base font-medium text-gray-900 leading-tight truncate">Institute</p>
+              <div>
+                <p className="text-lg font-semibold text-gray-1000">Heritage Institute</p>
+                <p className="text-lg font-semibold text-gray-1000">of Technology</p>
               </div>
             </div>
 
-            {/* Competition Title - Center */}
-            <div className="flex flex-col items-center mx-1 flex-shrink-0">
-              <h1 className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">
+            {/* Center - Competition Title */}
+            <div className="flex flex-col items-center justify-center">
+              <h1 className="text-lg md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
                 UDAAN 2025
               </h1>
-              <p className="text-[10px] xs:text-xs text-gray-500 mt-px hidden xs:block whitespace-nowrap">
-                Startup Competition
+              <p className="text-sm text-gray-600 hidden md:block mt-1">
+                Business Model/Startup Competition
               </p>
             </div>
 
-            {/* IIC - Right */}
-            <div className="flex items-center gap-1 sm:gap-2 min-w-0">
-              <div className="min-w-0 text-right">
-                <p className="text-[11px] xs:text-xs sm:text-sm md:text-base font-medium text-gray-900 leading-tight truncate">Institution's</p>
-                <p className="text-[11px] xs:text-xs sm:text-sm md:text-base font-medium text-gray-900 leading-tight truncate">Innovation Council</p>
+            {/* IIC Logo - Right */}
+            <div className="flex items-center gap-4">
+              <div className="text-right">
+                <p className="text-lg font-semibold text-gray-800">Institution's Innovation</p>
+                <p className="text-lg font-semibold text-gray-800">Council</p>
               </div>
-              <div className="w-12 h-10 sm:w-14 sm:h-12 md:w-16 md:h-14 flex-shrink-0 relative">
+              <div className="w-36 h-24 md:w-48 md:h-28 relative">
                 <Image
                   src="/images/iiclogo-1.png"
                   alt="Institution's Innovation Council"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 3rem, (max-width: 768px) 3.5rem, 4rem"
+                  sizes="(max-width: 768px) 9rem, 12rem"
                 />
               </div>
             </div>
-
           </div>
         </div>
       </div>
