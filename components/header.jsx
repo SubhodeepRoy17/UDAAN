@@ -379,7 +379,7 @@ export default function Header() {
 
                 {/* Mobile CTA Button */}
                 <Button
-                  onClick={() => scrollToSection("#registration")}
+                  onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
                   className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white rounded-lg font-semibold shadow-lg"
                 >
                   Register Now
