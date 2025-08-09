@@ -4,7 +4,7 @@ import { Users, CheckCircle, GraduationCap } from 'lucide-react'
 
 export default function Eligibility() {
   return (
-    <section id="eligibility" className="pt-[72px] md:pt-0 py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section id="eligibility" className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">

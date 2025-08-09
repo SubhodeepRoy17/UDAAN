@@ -97,35 +97,9 @@ export default function Header() {
   return (
     <>
       {/* Institutional Logos Bar */}
-      <div className="fixed top-0 left-0 right-0 z-60 bg-white/95 backdrop-blur-md border-b border-gray-200/50 py-2 md:py-4">
-        <div className="container mx-auto px-2 md:px-4">
-          {/* Mobile View (shows only logos) */}
-          <div className="md:hidden flex items-center justify-between">
-            <div className="w-16 h-16 relative rounded-full border border-gray-200 overflow-hidden">
-              <Image
-                src="/images/HIT_Logo_New-Picsart-AiImageEnhancer.jpg"
-                alt="Heritage Institute of Technology"
-                fill
-                className="object-cover"
-              />
-            </div>
-            
-            <h1 className="text-xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-              UDAAN 2025
-            </h1>
-            
-            <div className="w-20 h-14 relative">
-              <Image
-                src="/images/iiclogo-1.png"
-                alt="Institution's Innovation Council"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-
-          {/* Desktop View (original layout) */}
-          <div className="hidden md:flex items-center justify-between">
+      <div className="fixed top-0 left-0 right-0 z-60 bg-white/95 backdrop-blur-md border-b border-gray-200/50 py-4">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
             {/* Heritage Institute Logo - Left */}
             <div className="flex items-center gap-4">
               <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-full shadow-sm border border-gray-200 overflow-hidden">
@@ -137,7 +111,7 @@ export default function Header() {
                   sizes="(max-width: 768px) 6rem, 7rem"
                 />
               </div>
-              <div>
+              <div className="hidden sm:block">
                 <p className="text-lg font-semibold text-gray-1000">Heritage Institute</p>
                 <p className="text-lg font-semibold text-gray-1000">of Technology</p>
               </div>
@@ -155,7 +129,7 @@ export default function Header() {
 
             {/* IIC Logo - Right */}
             <div className="flex items-center gap-4">
-              <div className="text-right">
+              <div className="hidden sm:block text-right">
                 <p className="text-lg font-semibold text-gray-800">Institution's Innovation</p>
                 <p className="text-lg font-semibold text-gray-800">Council</p>
               </div>
@@ -174,7 +148,8 @@ export default function Header() {
       </div>
 
       {/* Main Navigation Header */}
-      <header className={`fixed top-[72px] md:top-36 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black/95 backdrop-blur-md shadow-lg"}`}>        <div className="container mx-auto px-4">
+      <header className={`fixed top-36 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black/95 backdrop-blur-md shadow-lg"}`}>
+        <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-18">
             {/* Logo */}
             <div className="flex items-center gap-3">
@@ -404,7 +379,7 @@ export default function Header() {
 
                 {/* Mobile CTA Button */}
                 <Button
-                  onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
+                onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
                   className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white rounded-lg font-semibold shadow-lg"
                 >
                   Register Now
@@ -436,7 +411,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind fixed headers */}
-      <div className="h-[72px] md:h-56" />
+      <div className="h-56" />
     </>
   )
 }

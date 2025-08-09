@@ -46,7 +46,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero" className="pt-[72px] md:pt-0 relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Announcement Bar */}
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
         <div className="announcements-container flex items-center h-full whitespace-nowrap">
