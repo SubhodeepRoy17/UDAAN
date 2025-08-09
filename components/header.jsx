@@ -285,7 +285,8 @@ export default function Header() {
                           if (!item.dropdown) {
                             scrollToSection(item.href)
                           } else {
-                            setIsAboutOpen(!isAboutOpen)
+                            // Toggle only the current dropdown
+                            setIsAboutOpen(prev => item.id === "about" ? !prev : false)
                           }
                         }}
                         className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
@@ -295,10 +296,14 @@ export default function Header() {
                         }`}
                       >
                         {item.name}
-                        {item.dropdown && <ChevronDown className={`w-4 h-4 transition-transform ${isAboutOpen ? 'rotate-180' : ''}`} />}
+                        {item.dropdown && (
+                          <ChevronDown className={`w-4 h-4 transition-transform ${
+                            (item.id === "about" && isAboutOpen) ? 'rotate-180' : ''
+                          }`} />
+                        )}
                       </button>
                       
-                      {item.dropdown && isAboutOpen && (
+                      {item.dropdown && item.id === "about" && isAboutOpen && (
                         <div className="ml-4 mt-1 space-y-1">
                           {item.dropdown.map((dropdownItem) => (
                             <button
@@ -338,7 +343,10 @@ export default function Header() {
                             onClick={() => handleDownload(resource.href, resource.name)}
                             className="w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 text-blue-100"
                           >
-                            {resource.name}
+                            <div className="flex items-center">
+                              {resource.name}
+                              <Download className="w-4 h-4 ml-2" />
+                            </div>
                           </button>
                         ))}
                       </div>
