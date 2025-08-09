@@ -161,7 +161,7 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="container mx-auto px-4 py-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 align-center">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center">
           <div className="text-blue-200 text-sm text-center md:text-center">
             <p>© 2025 UDAAN - IIC Heritage Institute of Technology, Kolkata. All rights reserved.</p>
           </div>
