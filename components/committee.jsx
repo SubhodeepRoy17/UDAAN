@@ -64,7 +64,7 @@ export default function Committee() {
         designation: "Convenor, IIC-HITK, Asst. Professor, Dept. of Information Technology, Heritage Institute of Technology"
       },
       {
-        name: "Prof. Abhijeet Ghosh",
+        name: "Prof. Avijit Ghosh",
         designation: "Asst. Professor, Dept. of Chemical Engineering, Heritage Institute of Technology"
       },
       {
