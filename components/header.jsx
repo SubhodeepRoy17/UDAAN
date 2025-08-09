@@ -97,49 +97,53 @@ export default function Header() {
   return (
     <>
       {/* Institutional Logos Bar */}
-      <div className="fixed top-0 left-0 right-0 z-60 bg-white/95 backdrop-blur-md border-b border-gray-200/50 py-4">
-        <div className="container mx-auto px-4">
+      <div className="fixed top-0 left-0 right-0 z-60 bg-white/95 backdrop-blur-md border-b border-gray-200/50 py-2 sm:py-4">
+        <div className="container mx-auto px-2 sm:px-4">
           <div className="flex items-center justify-between">
             {/* Heritage Institute Logo - Left */}
-            <div className="flex items-center gap-4">
-              <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-full shadow-sm border border-gray-200 overflow-hidden">
+            <div className="flex items-center gap-2 sm:gap-4">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 relative rounded-full shadow-sm border border-gray-200 overflow-hidden">
                 <Image
                   src="/images/HIT_Logo_New-Picsart-AiImageEnhancer.jpg"
                   alt="Heritage Institute of Technology"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 6rem, 7rem"
+                  sizes="(max-width: 640px) 4rem, (max-width: 768px) 5rem, (max-width: 1024px) 6rem, 7rem"
                 />
               </div>
-              <div className="hidden sm:block">
-                <p className="text-lg font-semibold text-gray-1000">Heritage Institute</p>
-                <p className="text-lg font-semibold text-gray-1000">of Technology</p>
+              <div className="hidden xs:block">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-gray-1000 whitespace-nowrap">Heritage Institute</p>
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-gray-1000 whitespace-nowrap">of Technology</p>
               </div>
             </div>
 
             {/* Center - Competition Title */}
-            <div className="flex flex-col items-center justify-center">
-              <h1 className="text-lg md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+            <div className="flex flex-col items-center justify-center mx-1 sm:mx-2">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">
                 UDAAN 2025
               </h1>
-              <p className="text-sm text-gray-600 hidden md:block mt-1">
+              <p className="text-xs sm:text-sm text-gray-600 hidden sm:block mt-0.5 sm:mt-1 whitespace-nowrap">
                 Business Model/Startup Competition
               </p>
             </div>
 
             {/* IIC Logo - Right */}
-            <div className="flex items-center gap-4">
-              <div className="hidden sm:block text-right">
-                <p className="text-lg font-semibold text-gray-800">Institution's Innovation</p>
-                <p className="text-lg font-semibold text-gray-800">Council</p>
+            <div className="flex items-center gap-2 sm:gap-4">
+              <div className="hidden xs:block text-right">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 whitespace-nowrap">
+                  Institution's Innovation
+                </p>
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 whitespace-nowrap">
+                  Council
+                </p>
               </div>
-              <div className="w-36 h-24 md:w-48 md:h-28 relative">
+              <div className="w-20 h-14 sm:w-28 sm:h-20 md:w-36 md:h-24 lg:w-48 lg:h-28 relative">
                 <Image
                   src="/images/iiclogo-1.png"
                   alt="Institution's Innovation Council"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 9rem, 12rem"
+                  sizes="(max-width: 640px) 5rem, (max-width: 768px) 7rem, (max-width: 1024px) 9rem, 12rem"
                 />
               </div>
             </div>
