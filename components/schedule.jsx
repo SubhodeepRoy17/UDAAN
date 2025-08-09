@@ -83,72 +83,45 @@ export default function Schedule() {
               </CardHeader>
               
               <CardContent className="p-0">
-                {/* Mobile view - Stacked cards */}
-                <div className="md:hidden">
-                  {phase.events.map((event, eventIndex) => (
-                    <div 
-                      key={eventIndex} 
-                      className="p-4 border-b last:border-b-0 hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="font-semibold text-gray-900 mb-2">{event.event}</div>
-                      <div className="grid grid-cols-2 gap-3 text-sm">
-                        <div className="flex items-center gap-2 text-gray-700">
-                          <Calendar className="w-4 h-4 text-blue-500" />
-                          <span>{event.date}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-700">
-                          <Clock className="w-4 h-4 text-green-500" />
-                          <span>{event.time}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-700 col-span-2">
-                          <MapPin className="w-4 h-4 text-orange-500" />
-                          <span>{event.location}</span>
-                        </div>
-                      </div>
-                      <div className="mt-3 text-gray-600 text-sm">
-                        {event.description}
-                      </div>
+                {/* Table with horizontal scroll on mobile */}
+                <div className="overflow-x-auto">
+                  <div className="min-w-[600px] md:w-full">
+                    {/* Table Header */}
+                    <div className="grid grid-cols-5 bg-gray-50 border-b font-semibold text-gray-700 text-sm">
+                      <div className="p-3 md:p-4 border-r">Event</div>
+                      <div className="p-3 md:p-4 border-r">Date</div>
+                      <div className="p-3 md:p-4 border-r">Time</div>
+                      <div className="p-3 md:p-4 border-r">Location</div>
+                      <div className="p-3 md:p-4">Description</div>
                     </div>
-                  ))}
-                </div>
-
-                {/* Desktop view - Table */}
-                <div className="hidden md:block">
-                  {/* Table Header */}
-                  <div className="grid grid-cols-5 bg-gray-50 border-b font-semibold text-gray-700 text-sm">
-                    <div className="p-4 border-r">Event</div>
-                    <div className="p-4 border-r">Date</div>
-                    <div className="p-4 border-r">Time</div>
-                    <div className="p-4 border-r">Location</div>
-                    <div className="p-4">Description</div>
+                    
+                    {/* Table Rows */}
+                    {phase.events.map((event, eventIndex) => (
+                      <div 
+                        key={eventIndex} 
+                        className="grid grid-cols-5 hover:bg-gray-50 transition-colors border-b last:border-b-0"
+                      >
+                        <div className="p-3 md:p-4 border-r font-semibold text-gray-900 text-sm md:text-base">
+                          {event.event}
+                        </div>
+                        <div className="p-3 md:p-4 border-r text-gray-700 flex items-center gap-2 text-sm">
+                          <Calendar className="w-3 h-3 md:w-4 md:h-4 text-blue-500" />
+                          {event.date}
+                        </div>
+                        <div className="p-3 md:p-4 border-r text-gray-700 flex items-center gap-2 text-sm">
+                          <Clock className="w-3 h-3 md:w-4 md:h-4 text-green-500" />
+                          {event.time}
+                        </div>
+                        <div className="p-3 md:p-4 border-r text-gray-700 flex items-center gap-2 text-sm">
+                          <MapPin className="w-3 h-3 md:w-4 md:h-4 text-orange-500" />
+                          {event.location}
+                        </div>
+                        <div className="p-3 md:p-4 text-gray-600 text-xs md:text-sm">
+                          {event.description}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  
-                  {/* Table Rows */}
-                  {phase.events.map((event, eventIndex) => (
-                    <div 
-                      key={eventIndex} 
-                      className="grid grid-cols-5 hover:bg-gray-50 transition-colors border-b last:border-b-0"
-                    >
-                      <div className="p-4 border-r font-semibold text-gray-900">
-                        {event.event}
-                      </div>
-                      <div className="p-4 border-r text-gray-700 flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-blue-500" />
-                        {event.date}
-                      </div>
-                      <div className="p-4 border-r text-gray-700 flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-green-500" />
-                        {event.time}
-                      </div>
-                      <div className="p-4 border-r text-gray-700 flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-orange-500" />
-                        {event.location}
-                      </div>
-                      <div className="p-4 text-gray-600 text-sm">
-                        {event.description}
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </CardContent>
             </Card>
