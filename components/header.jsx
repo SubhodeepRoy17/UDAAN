@@ -280,45 +280,63 @@ export default function Header() {
                 <nav className="space-y-2 mb-8">
                   {navigationItems.map((item) => (
                     <div key={item.id}>
-                      <button
-                        onClick={() => {
-                          if (!item.dropdown) {
-                            scrollToSection(item.href)
-                          } else if (item.id === "about") {
-                            setIsAboutOpen(!isAboutOpen)
-                            setIsResourcesOpen(false) // Close resources if open
-                          }
-                        }}
-                        className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
-                          (activeSection === item.id || (item.dropdown && item.dropdown.some(d => activeSection === d.id))) 
-                            ? "bg-white/20 text-white" 
-                            : "text-blue-100"
-                        }`}
-                      >
-                        {item.name}
-                        {item.dropdown && (
-                          <ChevronDown className={`w-4 h-4 transition-transform ${
-                            (item.id === "about" && isAboutOpen) ? 'rotate-180' : ''
-                          }`} />
-                        )}
-                      </button>
-                      
-                      {item.id === "about" && isAboutOpen && (
-                        <div className="ml-4 mt-1 space-y-1">
-                          {item.dropdown.map((dropdownItem) => (
-                            <button
-                              key={dropdownItem.id}
-                              onClick={() => scrollToSection(dropdownItem.href)}
-                              className={`w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 ${
-                                activeSection === dropdownItem.id 
-                                  ? "bg-white/20 text-white" 
-                                  : "text-blue-100"
-                              }`}
-                            >
-                              {dropdownItem.name}
-                            </button>
-                          ))}
-                        </div>
+                      {item.dropdown ? (
+                        <>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (item.id === "about") {
+                                setIsAboutOpen(!isAboutOpen);
+                                setIsResourcesOpen(false);
+                              }
+                            }}
+                            className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
+                              (activeSection === item.id || (item.dropdown && item.dropdown.some(d => activeSection === d.id))) 
+                                ? "bg-white/20 text-white" 
+                                : "text-blue-100"
+                            }`}
+                          >
+                            {item.name}
+                            <ChevronDown className={`w-4 h-4 transition-transform ${
+                              (item.id === "about" && isAboutOpen) ? 'rotate-180' : ''
+                            }`} />
+                          </button>
+                          
+                          {item.id === "about" && isAboutOpen && (
+                            <div className="ml-4 mt-1 space-y-1">
+                              {item.dropdown.map((dropdownItem) => (
+                                <button
+                                  key={dropdownItem.id}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    scrollToSection(dropdownItem.href);
+                                  }}
+                                  className={`w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 ${
+                                    activeSection === dropdownItem.id 
+                                      ? "bg-white/20 text-white" 
+                                      : "text-blue-100"
+                                  }`}
+                                >
+                                  {dropdownItem.name}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            scrollToSection(item.href);
+                          }}
+                          className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 ${
+                            activeSection === item.id 
+                              ? "bg-white/20 text-white" 
+                              : "text-blue-100"
+                          }`}
+                        >
+                          {item.name}
+                        </button>
                       )}
                     </div>
                   ))}
@@ -326,9 +344,10 @@ export default function Header() {
                   {/* Mobile Resources Section */}
                   <div>
                     <button
-                      onClick={() => {
-                        setIsResourcesOpen(!isResourcesOpen)
-                        setIsAboutOpen(false) // Close about if open
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsResourcesOpen(!isResourcesOpen);
+                        setIsAboutOpen(false);
                       }}
                       className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-white/10 flex justify-between items-center ${
                         isResourcesOpen ? "bg-white/20 text-white" : "text-blue-100"
@@ -343,13 +362,14 @@ export default function Header() {
                         {resourcesItems.map((resource) => (
                           <button
                             key={resource.name}
-                            onClick={() => handleDownload(resource.href, resource.name)}
-                            className="w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 text-blue-100"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDownload(resource.href, resource.name);
+                            }}
+                            className="w-full text-left px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-white/10 text-blue-100 flex items-center"
                           >
-                            <div className="flex items-center">
-                              {resource.name}
-                              <Download className="w-4 h-4 ml-2" />
-                            </div>
+                            {resource.name}
+                            <Download className="w-4 h-4 ml-2" />
                           </button>
                         ))}
                       </div>
