@@ -385,25 +385,6 @@ export default function Header() {
                   Register Now
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-
-                {/* Competition Info */}
-                <div className="mt-8 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
-                  <h3 className="font-semibold mb-2">Quick Info</h3>
-                  <div className="space-y-2 text-sm text-blue-100">
-                    <div className="flex justify-between">
-                      <span>Registration:</span>
-                      <span className="text-white">Till March 15</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Prize Pool:</span>
-                      <span className="text-white">₹63,000+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Final Event:</span>
-                      <span className="text-white">March 26</span>
-                    </div>
-                  </div>
-                </div>
               </SheetContent>
             </Sheet>
           </div>
