@@ -130,7 +130,7 @@ export default function Hero() {
               Elevate Your Business Vision
             </h2>
 
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed text-center">
               The premier platform for aspiring entrepreneurs to launch, grow, and scale their business ideas with expert
               mentorship and investor connections.
             </p>
