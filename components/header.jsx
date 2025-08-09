@@ -436,7 +436,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind fixed headers */}
-      <div className="h-56" />
+      <div className="h-[72px] md:h-56" />
     </>
   )
 }

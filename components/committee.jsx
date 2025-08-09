@@ -91,7 +91,7 @@ export default function Committee() {
   }
 
   return (
-    <section id="committee" className="py-16 bg-gradient-to-b from-blue-50 to-white">
+    <section id="committee" className="pt-[72px] md:pt-0 py-16 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-4">Committee</Badge>
