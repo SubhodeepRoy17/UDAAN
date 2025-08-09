@@ -25,11 +25,11 @@ export default function Footer() {
   ]
 
   const resources = [
-    { name: "Competition Guidelines", href: "#" },
+    { name: "Competition Guidelines", href: "#guidelines" },
     { name: "Business Plan Template", href: "#" },
     { name: "Presentation Guidelines", href: "#" },
-    { name: "SDG Resources", href: "#" },
-    { name: "Startup Toolkit", href: "#" },
+    { name: "SDG Resources", href: "/SDG-Guidelines.pdf", type: "pdf" },
+    { name: "Event Bronchure", href: "/E-Poster-UDAAN.pdf", type: "pdf" },
   ]
 
   const socialLinks = [

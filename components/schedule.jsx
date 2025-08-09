@@ -29,7 +29,7 @@ export default function Schedule() {
           date: "August 23, 2025",
           time: "To be notified via email", 
           location: "Online Portal",
-          description: "Shortliosted teams will be notified via email"
+          description: "Shortlisted teams will be notified via email"
         },
         {
           event: "Final event",
@@ -39,168 +39,167 @@ export default function Schedule() {
           description: "Selected teams will be notified via email"
         }
       ]
-    },
-    // {
-    //   phase: "Final Event",
-    //   dateRange: "28th August, 2025",
-    //   color: "from-purple-500 to-purple-600", 
-    //   bgColor: "bg-purple-50",
-    //   events: [
-    //     {
-    //       event: "Registration & Setup",
-    //       date: "August 28, 2025",
-    //       time: "9:00 AM",
-    //       location: "Main Auditorium, HITK",
-    //       description: "Team check-in and presentation setup"
-    //     },
-    //     {
-    //       event: "Opening Ceremony",
-    //       date: "August 28, 2025",
-    //       time: "10:00 AM", 
-    //       location: "Main Auditorium, HITK",
-    //       description: "Welcome address and competition overview"
-    //     },
-    //     {
-    //       event: "Team Presentations",
-    //       date: "August 28, 2025",
-    //       time: "10:30 AM - 4:00 PM",
-    //       location: "Multiple Venues, HITK",
-    //       description: "10-minute presentations + 5-minute Q&A per team"
-    //     },
-    //     {
-    //       event: "Jury Deliberation",
-    //       date: "August 28, 2025", 
-    //       time: "4:00 PM - 5:00 PM",
-    //       location: "Private Room",
-    //       description: "Judges evaluate and select winners"
-    //     },
-    //     {
-    //       event: "Award Ceremony",
-    //       date: "August 28, 2025",
-    //       time: "5:30 PM - 6:30 PM",
-    //       location: "Main Auditorium, HITK", 
-    //       description: "Prize distribution and closing ceremony"
-    //     }
-    //   ]
-    // }
+    }
   ]
 
   return (
-    <section id="schedule" className="py-20 bg-gradient-to-b from-white to-blue-50">
-      <div className="container mx-auto px-4">
+    <section id="schedule" className="py-12 md:py-20 bg-gradient-to-b from-white to-blue-50">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-4">Event Schedule</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-3 md:mb-4 text-sm md:text-base">
+            Event Schedule
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             Competition{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Timeline</span>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Timeline
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Stay updated with all important dates and events throughout the competition journey
           </p>
         </div>
 
         {/* Schedule Table */}
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           {scheduleData.map((phase, phaseIndex) => (
-            <Card key={phaseIndex} className="border-0 shadow-xl bg-white overflow-hidden">
-              <CardHeader className={`${phase.bgColor} border-b`}>
-                <div className="flex items-center justify-between">
+            <Card key={phaseIndex} className="border-0 shadow-lg md:shadow-xl bg-white overflow-hidden">
+              <CardHeader className={`${phase.bgColor} border-b p-4 md:p-6`}>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
+                    <CardTitle className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
                       {phase.phase}
                     </CardTitle>
-                    <Badge className={`bg-gradient-to-r ${phase.color} text-white border-0 text-sm px-3 py-1`}>
+                    <Badge className={`bg-gradient-to-r ${phase.color} text-white border-0 text-xs sm:text-sm px-3 py-1`}>
                       {phase.dateRange}
                     </Badge>
                   </div>
-                  <div className={`w-16 h-16 bg-gradient-to-br ${phase.color} rounded-full flex items-center justify-center text-white shadow-lg`}>
-                    {phaseIndex === 0 && <FileText className="w-8 h-8" />}
-                    {phaseIndex === 1 && <Users className="w-8 h-8" />}
-                    {phaseIndex === 2 && <FileText className="w-8 h-8" />}
-                    {phaseIndex === 3 && <Presentation className="w-8 h-8" />}
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br ${phase.color} rounded-full flex items-center justify-center text-white shadow-lg`}>
+                    {phaseIndex === 0 && <FileText className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />}
+                    {phaseIndex === 1 && <Users className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />}
                   </div>
                 </div>
               </CardHeader>
               
               <CardContent className="p-0">
-                {/* Table Header */}
-                <div className="grid grid-cols-1 md:grid-cols-5 bg-gray-50 border-b font-semibold text-gray-700 text-sm">
-                  <div className="p-4 border-r">Event</div>
-                  <div className="p-4 border-r">Date</div>
-                  <div className="p-4 border-r">Time</div>
-                  <div className="p-4 border-r">Location</div>
-                  <div className="p-4">Description</div>
+                {/* Mobile view - Stacked cards */}
+                <div className="md:hidden">
+                  {phase.events.map((event, eventIndex) => (
+                    <div 
+                      key={eventIndex} 
+                      className="p-4 border-b last:border-b-0 hover:bg-gray-50 transition-colors"
+                    >
+                      <div className="font-semibold text-gray-900 mb-2">{event.event}</div>
+                      <div className="grid grid-cols-2 gap-3 text-sm">
+                        <div className="flex items-center gap-2 text-gray-700">
+                          <Calendar className="w-4 h-4 text-blue-500" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-700">
+                          <Clock className="w-4 h-4 text-green-500" />
+                          <span>{event.time}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-700 col-span-2">
+                          <MapPin className="w-4 h-4 text-orange-500" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
+                      <div className="mt-3 text-gray-600 text-sm">
+                        {event.description}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                
-                {/* Table Rows */}
-                {phase.events.map((event, eventIndex) => (
-                  <div 
-                    key={eventIndex} 
-                    className="grid grid-cols-1 md:grid-cols-5 hover:bg-gray-50 transition-colors border-b last:border-b-0"
-                  >
-                    <div className="p-4 border-r font-semibold text-gray-900">
-                      {event.event}
-                    </div>
-                    <div className="p-4 border-r text-gray-700 flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-blue-500" />
-                      {event.date}
-                    </div>
-                    <div className="p-4 border-r text-gray-700 flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-green-500" />
-                      {event.time}
-                    </div>
-                    <div className="p-4 border-r text-gray-700 flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-orange-500" />
-                      {event.location}
-                    </div>
-                    <div className="p-4 text-gray-600 text-sm">
-                      {event.description}
-                    </div>
+
+                {/* Desktop view - Table */}
+                <div className="hidden md:block">
+                  {/* Table Header */}
+                  <div className="grid grid-cols-5 bg-gray-50 border-b font-semibold text-gray-700 text-sm">
+                    <div className="p-4 border-r">Event</div>
+                    <div className="p-4 border-r">Date</div>
+                    <div className="p-4 border-r">Time</div>
+                    <div className="p-4 border-r">Location</div>
+                    <div className="p-4">Description</div>
                   </div>
-                ))}
+                  
+                  {/* Table Rows */}
+                  {phase.events.map((event, eventIndex) => (
+                    <div 
+                      key={eventIndex} 
+                      className="grid grid-cols-5 hover:bg-gray-50 transition-colors border-b last:border-b-0"
+                    >
+                      <div className="p-4 border-r font-semibold text-gray-900">
+                        {event.event}
+                      </div>
+                      <div className="p-4 border-r text-gray-700 flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-blue-500" />
+                        {event.date}
+                      </div>
+                      <div className="p-4 border-r text-gray-700 flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-green-500" />
+                        {event.time}
+                      </div>
+                      <div className="p-4 border-r text-gray-700 flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-orange-500" />
+                        {event.location}
+                      </div>
+                      <div className="p-4 text-gray-600 text-sm">
+                        {event.description}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
         {/* Quick Summary */}
-        <div className="mt-16">
+        <div className="mt-12 md:mt-16">
           <Card className="border-0 bg-gradient-to-r from-purple-600 to-blue-600 text-white overflow-hidden">
             <div className="absolute inset-0 bg-black/10" />
-            <CardContent className="relative p-8 md:p-12">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
-                  <Award className="w-5 h-5" />
-                  <span className="text-sm font-medium">Grand Finale</span>
+            <CardContent className="relative p-6 md:p-12">
+              <div className="text-center mb-6 md:mb-8">
+                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 md:px-4 md:py-2 mb-3 md:mb-4">
+                  <Award className="w-4 h-4 md:w-5 md:h-5" />
+                  <span className="text-xs md:text-sm font-medium">Grand Finale</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">Final Event Day - August 28, 2025</h3>
-                <p className="text-purple-100 text-lg max-w-2xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">
+                  Final Event Day - August 28, 2025
+                </h3>
+                <p className="text-purple-100 text-base md:text-lg max-w-2xl mx-auto">
                   Join us for an exciting day of presentations, networking, and celebration at HITK campus
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Presentation className="w-8 h-8" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                    <Presentation className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
                   </div>
-                  <h4 className="text-xl font-bold mb-2">30 Teams Present</h4>
-                  <p className="text-purple-100 text-sm">Shortlisted teams pitch their ideas to expert jury</p>
+                  <h4 className="text-lg sm:text-xl font-bold mb-1 md:mb-2">30 Teams Present</h4>
+                  <p className="text-purple-100 text-xs sm:text-sm">
+                    Shortlisted teams pitch their ideas to expert jury
+                  </p>
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8" />
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                    <Users className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Expert Jury Panel</h4>
-                  <p className="text-purple-100 text-sm">Industry leaders evaluate and provide feedback</p>
+                  <h4 className="text-lg sm:text-xl font-bold mb-1 md:mb-2">Expert Jury Panel</h4>
+                  <p className="text-purple-100 text-xs sm:text-sm">
+                    Industry leaders evaluate and provide feedback
+                  </p>
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="w-8 h-8" />
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                    <Award className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Awards & Recognition</h4>
-                  <p className="text-purple-100 text-sm">Winners announced with prizes and certificates</p>
+                  <h4 className="text-lg sm:text-xl font-bold mb-1 md:mb-2">Awards & Recognition</h4>
+                  <p className="text-purple-100 text-xs sm:text-sm">
+                    Winners announced with prizes and certificates
+                  </p>
                 </div>
               </div>
             </CardContent>
