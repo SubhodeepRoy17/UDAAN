@@ -26,7 +26,7 @@ export default function Guidelines() {
     //     "Select one primary SDG theme for your business idea",
     //     "Provide detailed contact information for all members",
     //     "Submit team name and brief idea description",
-    //     "Registration deadline: August 17, 2025 at 11:59 PM"
+    //     "Registration deadline: August 17, 2026 at 11:59 PM"
     //   ]
     // },
     // {
@@ -39,7 +39,7 @@ export default function Guidelines() {
     //     "Presentation slides (maximum 15 slides, PPT/PDF format)",
     //     "Include problem statement, solution, and market analysis",
     //     "Demonstrate clear SDG alignment and impact measurement",
-    //     "Submission deadline: August 25, 2025 at 11:59 PM"
+    //     "Submission deadline: August 25, 2026 at 11:59 PM"
     //   ]
     // },
     // {
@@ -74,9 +74,9 @@ export default function Guidelines() {
       color: "from-indigo-500 to-indigo-600",
       bgColor: "bg-indigo-50",
       points: [
-        "Registration opens: August 7, 2025",
-        "Registration closes: August 17, 2025",
-        "Final event: August 28, 2025",
+        "Registration opens: August 7, 2026",
+        "Registration closes: August 17, 2026",
+        "Final event: August 28, 2026",
         "Venue: Heritage Institute of Technology, Kolkata",
         "For any queries, contact: rituparna.sinha@heritageit.edu /+91-91230-74188"
       ]

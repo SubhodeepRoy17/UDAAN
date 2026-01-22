@@ -99,7 +99,7 @@ export default function Committee() {
             Organizing Committee
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            The distinguished members who are guiding and organizing UDAAN 2025
+            The distinguished members who are guiding and organizing UDAAN 2026
           </p>
         </div>
 

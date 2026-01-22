@@ -12,28 +12,28 @@ export default function Schedule() {
       events: [
         {
           event: "Submission Opens",
-          date: "August 7, 2025",
+          date: "August 7, 2026",
           time: "9:00 AM",
           location: "Online Portal",
           description: "Team registration portal goes live"
         },
         {
           event: "Submission Deadline",
-          date: "August 17, 2025",
+          date: "August 17, 2026",
           time: "11:59 PM", 
           location: "Online Portal",
           description: "Last date for team registration"
         },
         {
           event: "Submission Shortlisting Notification",
-          date: "August 23, 2025",
+          date: "August 23, 2026",
           time: "To be notified via email", 
           location: "Online Portal",
           description: "Shortlisted teams will be notified via email"
         },
         {
           event: "Final event",
-          date: "August 28, 2025",
+          date: "August 28, 2026",
           time: "10:00 AM onwards", 
           location: "To be notified via email",
           description: "Selected teams will be notified via email"
@@ -139,7 +139,7 @@ export default function Schedule() {
                   <span className="text-xs md:text-sm font-medium">Grand Finale</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">
-                  Final Event Day - August 28, 2025
+                  Final Event Day - August 28, 2026
                 </h3>
                 <p className="text-purple-100 text-base md:text-lg max-w-2xl mx-auto">
                   Join us for an exciting day of presentations, networking, and celebration at HITK campus

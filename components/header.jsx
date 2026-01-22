@@ -120,7 +120,7 @@ export default function Header() {
             {/* Center - Competition Title */}
             <div className="flex flex-col items-center justify-center">
               <h1 className="text-lg md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-                UDAAN 2025
+                UDAAN 2026
               </h1>
               <p className="text-sm text-gray-600 hidden md:block mt-1">
                 Business Model/Startup Competition
@@ -244,7 +244,6 @@ export default function Header() {
             {/* Register Button */}
             <div className="hidden lg:flex items-center gap-2">
               <Button
-                onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
                 size="sm"
                 className="rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white"
               >
@@ -379,7 +378,6 @@ export default function Header() {
 
                 {/* Mobile CTA Button */}
                 <Button
-                onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
                   className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white rounded-lg font-semibold shadow-lg"
                 >
                   Register Now

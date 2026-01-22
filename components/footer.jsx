@@ -163,7 +163,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col items-center justify-center gap-2 text-center">
           <div className="text-blue-200 text-sm">
-            <p>© 2025 UDAAN - IIC Heritage Institute of Technology, Kolkata. All rights reserved.</p>
+            <p>© 2026 UDAAN - IIC Heritage Institute of Technology, Kolkata. All rights reserved.</p>
           </div>          
         </div>
 

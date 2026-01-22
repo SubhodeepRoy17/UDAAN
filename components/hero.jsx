@@ -51,7 +51,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
         <div className="announcements-container flex items-center h-full whitespace-nowrap">
           {[
-            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
+            "IIC-HITK Presents UDAAN 2026 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
               <span className="mr-2 px-1.5 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
@@ -62,7 +62,7 @@ export default function Hero() {
                 }}></span>
                 <span className="relative z-10">NEW</span>
               </span>
-              Registration deadline is 17th August
+              Registration starts soon
             </span>
           ].flatMap((text, index, array) => [
             <div 
@@ -75,7 +75,7 @@ export default function Hero() {
           ])}
           {/* Duplicate for seamless looping */}
           {[
-            "IIC-HITK Presents UDAAN 2025 : From Grounded Ideas to Sky High Impact",
+            "IIC-HITK Presents UDAAN 2026 : From Grounded Ideas to Sky High Impact",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
               <span className="mr-2 px-1.5 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
@@ -86,7 +86,7 @@ export default function Hero() {
                 }}></span>
                 <span className="relative z-10">NEW</span>
               </span>
-              Registration deadline is 17th August
+              Registration starts soon
             </span>
           ].flatMap((text, index, array) => [
             <div 
@@ -138,7 +138,6 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
               <Button
-                onClick={() => window.open("https://docs.google.com/forms/d/1fK2X6qKEnuIbDW21Fgg_2KFCeRUcuL18UkLOBf6xRcI", "_blank")}
                 size="lg"
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
               >
@@ -151,7 +150,7 @@ export default function Hero() {
                   // Create download link for the PDF
                   const link = document.createElement('a')
                   link.href = '/E-Poster-UDAAN.pdf' // Path to your PDF in public folder
-                  link.download = 'UDAAN-2025-Brochure.pdf' // Suggested filename for download
+                  link.download = 'UDAAN-2026-Brochure.pdf' // Suggested filename for download
                   document.body.appendChild(link)
                   link.click()
                   document.body.removeChild(link)

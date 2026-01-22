@@ -18,7 +18,7 @@ export default function Registration() {
         "Open to all undergraduate and postgraduate students",
         "Free for HITK students",
         "₹500 per team for external participants",
-        "Registration: 7th August 2025 - 17th August 2025"
+        "Registration: 7th August 2026 - 17th August 2026"
       ]
     },
     {
