@@ -6,7 +6,6 @@ export default function Schedule() {
   const scheduleData = [
     {
       phase: "Registration Timeline",
-      dateRange: "26th-27th August",
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
       events: [
