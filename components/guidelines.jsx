@@ -76,7 +76,7 @@ export default function Guidelines() {
       points: [
         "Registration opens: August 7, 2026",
         "Registration closes: August 17, 2026",
-        "Final event: August 25-26, 2026",
+        "Final event: August 26-27, 2026",
         "Venue: Heritage Institute of Technology, Kolkata",
         "For any queries, contact: rituparna.sinha@heritageit.edu /+91-91230-74188"
       ]
