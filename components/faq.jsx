@@ -24,12 +24,12 @@ export default function FAQ() {
       category: "General",
       questions: [
         {
-          question: "What is UDAAN competition about?",
+          question: "What is UDAAN2.0 competition about?",
           answer:
-            "UDAAN is a startup and business model competition organized by IIC-HITK that focuses on innovative solutions aligned with UN Sustainable Development Goals. It provides a platform for students to transform their ideas into viable business models with expert mentorship and substantial prizes.",
+            "UDAAN2.0 is a startup and business model competition organized by IIC-HITK that focuses on innovative solutions aligned with UN Sustainable Development Goals. It provides a platform for students to transform their ideas into viable business models with expert mentorship and substantial prizes.",
         },
         {
-          question: "Who can participate in UDAAN?",
+          question: "Who can participate in UDAAN2.0?",
           answer:
             "The competition is open to all undergraduate and postgraduate students. Teams can have a maximum of 3 members including the team leader. Both HITK students and external participants are welcome.",
         },
@@ -78,7 +78,7 @@ export default function FAQ() {
             <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Questions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to common questions about UDAAN competition. Can't find what you're looking for? Contact us!
+            Find answers to common questions about UDAAN2.0 competition. Can't find what you're looking for? Contact us!
           </p>
         </div>
 
@@ -143,7 +143,7 @@ export default function FAQ() {
               <div>
                 <h3 className="text-2xl font-bold mb-2">Still Have Questions?</h3>
                 <p className="text-blue-100 mb-4">
-                  Our team is here to help you with any queries about UDAAN competition
+                  Our team is here to help you with any queries about UDAAN2.0 competition
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50">

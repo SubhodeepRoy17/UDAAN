@@ -9,6 +9,7 @@ import Registration from "@/components/registration"
 import Prizes from "@/components/prizes"
 import Schedule from "@/components/schedule"
 import Committee from "@/components/committee"
+import Sponsors from "@/components/sponsors"
 import FAQ from "@/components/faq"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
@@ -27,6 +28,7 @@ export default function Home() {
       <Prizes />
       <Schedule />
       <Committee />
+      <Sponsors />
       <FAQ />
       <Footer />
     </main>

@@ -30,6 +30,7 @@ export default function Header() {
     { name: "Prizes", href: "#prizes", id: "prizes" },
     { name: "Important dates", href: "#schedule", id: "schedule" },
     { name: "Committee", href: "#committee", id: "committee" },
+    { name: "Sponsors", href: "#sponsors", id: "sponsors" },
     { name: "FAQ", href: "#faq", id: "faq" },
   ]
 
@@ -119,11 +120,11 @@ export default function Header() {
 
             {/* Center - Competition Title */}
             <div className="flex flex-col items-center justify-center">
-              <h1 className="text-lg md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-                UDAAN 2026
+              <h1 className="text-center text-lg md:text-3xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent leading-tight">
+                UDAAN2.0
               </h1>
-              <p className="text-sm text-gray-600 hidden md:block mt-1">
-                Business Model/Startup Competition
+              <p className="text-[11px] md:text-sm text-gray-600 hidden md:block mt-1 text-center max-w-lg">
+                A National Level Prototype/Business Model Competition
               </p>
             </div>
 
@@ -157,7 +158,7 @@ export default function Header() {
                 <Rocket className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-white">UDAAN</h1>
+                    <h1 className="text-xl font-bold text-white">UDAAN2.0</h1>
                 <p className="text-xs font-medium text-blue-100">IIC-HITK</p>
               </div>
             </div>
@@ -270,8 +271,8 @@ export default function Header() {
                     <Rocket className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold">UDAAN</h2>
-                    <p className="text-blue-200 text-sm">From Ideas to Impact</p>
+                    <h2 className="text-2xl font-bold">UDAAN2.0</h2>
+                    <p className="text-blue-200 text-sm">Prototype/Business Model Competition</p>
                   </div>
                 </div>
 

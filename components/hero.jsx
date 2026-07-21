@@ -51,7 +51,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden z-20">
         <div className="announcements-container flex items-center h-full whitespace-nowrap">
           {[
-            "IIC-HITK Presents UDAAN 2026 : From Grounded Ideas to Sky High Impact",
+            "IIC-HITK Presents UDAAN2.0: A National Level Prototype/Business Model Competition",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
               <span className="mr-2 px-1.5 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
@@ -75,7 +75,7 @@ export default function Hero() {
           ])}
           {/* Duplicate for seamless looping */}
           {[
-            "IIC-HITK Presents UDAAN 2026 : From Grounded Ideas to Sky High Impact",
+            "IIC-HITK Presents UDAAN2.0: A National Level Prototype/Business Model Competition",
             "30 teams will be shortlisted for the finals",
             <span className="relative inline-flex items-center">
               <span className="mr-2 px-1.5 py-0.5 text-xs font-bold rounded-md bg-white/20 border border-white/30 relative overflow-hidden">
@@ -117,17 +117,17 @@ export default function Hero() {
             <div className="flex justify-center">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-8 border border-white/30">
                 <Rocket className="w-5 h-5 text-orange-300" />
-                <span className="text-sm font-medium text-white">IIC-HITK Presents</span>
+                <span className="text-sm font-medium text-white">IIC-HITK Presents UDAAN2.0</span>
               </div>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-center">
-              <span className="bg-gradient-to-r from-orange-300 to-blue-300 bg-clip-text text-transparent">UDAAN</span>
+              <span className="bg-gradient-to-r from-orange-300 to-blue-300 bg-clip-text text-transparent">UDAAN2.0</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-white text-center">
-              Elevate Your Business Vision
+              A National Level Prototype/Business Model Competition
             </h2>
 
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed text-center">
@@ -150,7 +150,7 @@ export default function Hero() {
                   // Create download link for the PDF
                   const link = document.createElement('a')
                   link.href = '/E-Poster-UDAAN.pdf' // Path to your PDF in public folder
-                  link.download = 'UDAAN-2026-Brochure.pdf' // Suggested filename for download
+                  link.download = 'UDAAN2.0-Brochure.pdf' // Suggested filename for download
                   document.body.appendChild(link)
                   link.click()
                   document.body.removeChild(link)

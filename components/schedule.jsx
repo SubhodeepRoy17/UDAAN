@@ -6,7 +6,7 @@ export default function Schedule() {
   const scheduleData = [
     {
       phase: "Registration Timeline",
-      dateRange: "7th August to 15th August",
+      dateRange: "25th-26th August",
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
       events: [
@@ -33,7 +33,7 @@ export default function Schedule() {
         },
         {
           event: "Final event",
-          date: "August 28, 2026",
+          date: "August 25-26, 2026",
           time: "10:00 AM onwards", 
           location: "To be notified via email",
           description: "Selected teams will be notified via email"
@@ -139,7 +139,7 @@ export default function Schedule() {
                   <span className="text-xs md:text-sm font-medium">Grand Finale</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">
-                  Final Event Day - August 28, 2026
+                  Competition Dates - August 25-26, 2026
                 </h3>
                 <p className="text-purple-100 text-base md:text-lg max-w-2xl mx-auto">
                   Join us for an exciting day of presentations, networking, and celebration at HITK campus

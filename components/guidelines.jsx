@@ -76,7 +76,7 @@ export default function Guidelines() {
       points: [
         "Registration opens: August 7, 2026",
         "Registration closes: August 17, 2026",
-        "Final event: August 28, 2026",
+        "Final event: August 25-26, 2026",
         "Venue: Heritage Institute of Technology, Kolkata",
         "For any queries, contact: rituparna.sinha@heritageit.edu /+91-91230-74188"
       ]
@@ -96,7 +96,7 @@ export default function Guidelines() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything you need to know to participate successfully in UDAAN competition
+            Everything you need to know to participate successfully in UDAAN2.0
           </p>
         </div>
 

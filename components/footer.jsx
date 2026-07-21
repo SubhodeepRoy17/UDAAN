@@ -17,9 +17,10 @@ import Link from "next/link"
 
 export default function Footer() {
   const quickLinks = [
-    { name: "About UDAAN", href: "#about" },
+    { name: "About UDAAN2.0", href: "#about" },
     { name: "Registration", href: "#registration" },
     { name: "Schedule", href: "#schedule" },
+    { name: "Sponsors", href: "#sponsors" },
     { name: "Prizes", href: "#prizes" },
     { name: "FAQ", href: "#faq" },
   ]
@@ -54,7 +55,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-300 to-blue-300 bg-clip-text text-transparent">
-                  UDAAN
+                  UDAAN2.0
                 </h3>
                 <p className="text-sm text-blue-200">IIC-HITK</p>
               </div>
@@ -163,7 +164,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col items-center justify-center gap-2 text-center">
           <div className="text-blue-200 text-sm">
-            <p>© 2026 UDAAN - IIC Heritage Institute of Technology, Kolkata. All rights reserved.</p>
+            <p>© 2026 UDAAN2.0 - IIC Heritage Institute of Technology, Kolkata. All rights reserved.</p>
           </div>          
         </div>
 

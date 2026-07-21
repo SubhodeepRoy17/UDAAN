@@ -86,6 +86,18 @@ export default function Committee() {
       {
         name: "Ms. Rajashree Lodh",
         designation: "Asst. Professor, Dept. of Civil Engineering, Heritage Institute of Technology"
+      },
+      {
+        name: "Prof. Jhalak Dutta",
+        designation: "Coordinator"
+      },
+      {
+        name: "Prof. Santanu Roy",
+        designation: "Coordinator"
+      },
+      {
+        name: "Prof. Anil Kumar Bag",
+        designation: "Coordinator"
       }
     ]
   }
@@ -99,7 +111,7 @@ export default function Committee() {
             Organizing Committee
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            The distinguished members who are guiding and organizing UDAAN 2026
+            The distinguished members who are guiding and organizing UDAAN2.0
           </p>
         </div>
 
